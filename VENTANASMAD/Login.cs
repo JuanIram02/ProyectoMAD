@@ -45,6 +45,7 @@ namespace VENTANASMAD
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Registrate f3 = new Registrate();
             f3.ShowDialog();
         }
