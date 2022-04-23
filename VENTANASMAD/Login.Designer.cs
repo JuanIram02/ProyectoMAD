@@ -69,7 +69,7 @@ namespace VENTANASMAD
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(268, 229);
+            this.textBox12.Location = new System.Drawing.Point(285, 229);
             this.textBox12.Name = "textBox12";
             this.textBox12.PasswordChar = '*';
             this.textBox12.Size = new System.Drawing.Size(264, 22);
