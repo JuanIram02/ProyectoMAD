@@ -43,17 +43,19 @@ namespace VENTANASMAD
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Century", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(263, 98);
+            this.label22.Location = new System.Drawing.Point(197, 80);
+            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(81, 28);
+            this.label22.Size = new System.Drawing.Size(66, 23);
             this.label22.TabIndex = 98;
             this.label22.Text = "Login";
             // 
             // textBox18
             // 
-            this.textBox18.Location = new System.Drawing.Point(268, 171);
+            this.textBox18.Location = new System.Drawing.Point(201, 139);
+            this.textBox18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(264, 22);
+            this.textBox18.Size = new System.Drawing.Size(199, 20);
             this.textBox18.TabIndex = 96;
             // 
             // label18
@@ -61,18 +63,20 @@ namespace VENTANASMAD
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(265, 151);
+            this.label18.Location = new System.Drawing.Point(199, 123);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(59, 17);
+            this.label18.Size = new System.Drawing.Size(48, 15);
             this.label18.TabIndex = 94;
             this.label18.Text = "Usuario";
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(285, 229);
+            this.textBox12.Location = new System.Drawing.Point(201, 187);
+            this.textBox12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox12.Name = "textBox12";
             this.textBox12.PasswordChar = '*';
-            this.textBox12.Size = new System.Drawing.Size(264, 22);
+            this.textBox12.Size = new System.Drawing.Size(199, 20);
             this.textBox12.TabIndex = 92;
             // 
             // label5
@@ -80,9 +84,10 @@ namespace VENTANASMAD
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(265, 209);
+            this.label5.Location = new System.Drawing.Point(199, 170);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 17);
+            this.label5.Size = new System.Drawing.Size(67, 15);
             this.label5.TabIndex = 91;
             this.label5.Text = "Contraseña";
             // 
@@ -91,9 +96,10 @@ namespace VENTANASMAD
             this.logi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.logi.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.logi.ForeColor = System.Drawing.Color.White;
-            this.logi.Location = new System.Drawing.Point(193, 302);
+            this.logi.Location = new System.Drawing.Point(145, 245);
+            this.logi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.logi.Name = "logi";
-            this.logi.Size = new System.Drawing.Size(155, 49);
+            this.logi.Size = new System.Drawing.Size(116, 40);
             this.logi.TabIndex = 99;
             this.logi.Text = "Iniciar Sesión";
             this.logi.UseVisualStyleBackColor = false;
@@ -104,9 +110,10 @@ namespace VENTANASMAD
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(427, 302);
+            this.button2.Location = new System.Drawing.Point(320, 245);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 49);
+            this.button2.Size = new System.Drawing.Size(116, 40);
             this.button2.TabIndex = 100;
             this.button2.Text = "Registrate";
             this.button2.UseVisualStyleBackColor = false;
@@ -114,10 +121,10 @@ namespace VENTANASMAD
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(68)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.logi);
             this.Controls.Add(this.label22);
@@ -126,6 +133,7 @@ namespace VENTANASMAD
             this.Controls.Add(this.textBox12);
             this.Controls.Add(this.label5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Login";
             this.Text = "Registro";
             this.ResumeLayout(false);
