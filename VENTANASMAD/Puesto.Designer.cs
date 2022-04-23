@@ -53,17 +53,19 @@ namespace VENTANASMAD
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Century", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(61, 56);
+            this.label22.Location = new System.Drawing.Point(46, 46);
+            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(105, 28);
+            this.label22.Size = new System.Drawing.Size(87, 23);
             this.label22.TabIndex = 93;
             this.label22.Text = "Puestos";
             // 
             // textBox18
             // 
-            this.textBox18.Location = new System.Drawing.Point(88, 130);
+            this.textBox18.Location = new System.Drawing.Point(66, 106);
+            this.textBox18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(264, 22);
+            this.textBox18.Size = new System.Drawing.Size(199, 20);
             this.textBox18.TabIndex = 90;
             // 
             // label18
@@ -71,24 +73,27 @@ namespace VENTANASMAD
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(85, 110);
+            this.label18.Location = new System.Drawing.Point(64, 89);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(126, 17);
+            this.label18.Size = new System.Drawing.Size(103, 15);
             this.label18.TabIndex = 87;
             this.label18.Text = "Número de Puesto";
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(384, 191);
+            this.textBox6.Location = new System.Drawing.Point(288, 155);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(264, 22);
+            this.textBox6.Size = new System.Drawing.Size(199, 20);
             this.textBox6.TabIndex = 85;
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(384, 130);
+            this.textBox12.Location = new System.Drawing.Point(288, 106);
+            this.textBox12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(264, 22);
+            this.textBox12.Size = new System.Drawing.Size(199, 20);
             this.textBox12.TabIndex = 84;
             // 
             // label5
@@ -96,9 +101,10 @@ namespace VENTANASMAD
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(381, 170);
+            this.label5.Location = new System.Drawing.Point(286, 138);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(171, 17);
+            this.label5.Size = new System.Drawing.Size(135, 15);
             this.label5.TabIndex = 82;
             this.label5.Text = "Nivel Salarial Porcentual";
             // 
@@ -107,9 +113,10 @@ namespace VENTANASMAD
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(381, 110);
+            this.label6.Location = new System.Drawing.Point(286, 89);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 17);
+            this.label6.Size = new System.Drawing.Size(49, 15);
             this.label6.TabIndex = 81;
             this.label6.Text = "Nombre";
             // 
@@ -117,9 +124,10 @@ namespace VENTANASMAD
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.ForeColor = System.Drawing.Color.White;
-            this.radioButton1.Location = new System.Drawing.Point(703, 191);
+            this.radioButton1.Location = new System.Drawing.Point(527, 155);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(67, 21);
+            this.radioButton1.Size = new System.Drawing.Size(55, 17);
             this.radioButton1.TabIndex = 94;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Activo";
@@ -129,9 +137,10 @@ namespace VENTANASMAD
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.ForeColor = System.Drawing.Color.White;
-            this.radioButton2.Location = new System.Drawing.Point(823, 191);
+            this.radioButton2.Location = new System.Drawing.Point(617, 155);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(89, 21);
+            this.radioButton2.Size = new System.Drawing.Size(72, 17);
             this.radioButton2.TabIndex = 95;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "No Activo";
@@ -142,9 +151,10 @@ namespace VENTANASMAD
             this.button3.BackColor = System.Drawing.Color.Navy;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(699, 249);
+            this.button3.Location = new System.Drawing.Point(524, 202);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(155, 49);
+            this.button3.Size = new System.Drawing.Size(116, 40);
             this.button3.TabIndex = 97;
             this.button3.Text = "Salir";
             this.button3.UseVisualStyleBackColor = false;
@@ -154,21 +164,24 @@ namespace VENTANASMAD
             this.button2.BackColor = System.Drawing.Color.Red;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(137, 249);
+            this.button2.Location = new System.Drawing.Point(103, 202);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 49);
+            this.button2.Size = new System.Drawing.Size(116, 40);
             this.button2.TabIndex = 100;
             this.button2.Text = "Agregar";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.SystemColors.HotTrack;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(508, 249);
+            this.button4.Location = new System.Drawing.Point(381, 202);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(155, 49);
+            this.button4.Size = new System.Drawing.Size(116, 40);
             this.button4.TabIndex = 99;
             this.button4.Text = "Eliminar";
             this.button4.UseVisualStyleBackColor = false;
@@ -178,9 +191,10 @@ namespace VENTANASMAD
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(319, 249);
+            this.button5.Location = new System.Drawing.Point(239, 202);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(155, 49);
+            this.button5.Size = new System.Drawing.Size(116, 40);
             this.button5.TabIndex = 98;
             this.button5.Text = "Editar";
             this.button5.UseVisualStyleBackColor = false;
@@ -188,11 +202,12 @@ namespace VENTANASMAD
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(39, 304);
+            this.dataGridView1.Location = new System.Drawing.Point(29, 247);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1010, 329);
+            this.dataGridView1.Size = new System.Drawing.Size(758, 267);
             this.dataGridView1.TabIndex = 101;
             // 
             // label16
@@ -200,26 +215,28 @@ namespace VENTANASMAD
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(85, 171);
+            this.label16.Location = new System.Drawing.Point(64, 139);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(101, 17);
+            this.label16.Size = new System.Drawing.Size(81, 15);
             this.label16.TabIndex = 89;
             this.label16.Text = "Departamento";
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(88, 188);
+            this.comboBox2.Location = new System.Drawing.Point(66, 153);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(264, 24);
+            this.comboBox2.Size = new System.Drawing.Size(199, 21);
             this.comboBox2.TabIndex = 102;
             // 
             // Puesto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(1081, 645);
+            this.ClientSize = new System.Drawing.Size(811, 524);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
@@ -237,6 +254,7 @@ namespace VENTANASMAD
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Puesto";
             this.Text = "AgregarEmpleado";
             this.Load += new System.EventHandler(this.Puesto_Load);
