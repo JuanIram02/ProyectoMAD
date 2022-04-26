@@ -33,6 +33,7 @@ namespace VENTANASMAD
 
         private void button3_Click_1(object sender, EventArgs e)
         {
+            this.Hide();
             AÑADIREMPLEADO f5 = new AÑADIREMPLEADO();
             f5.ShowDialog();
         }
@@ -47,6 +48,20 @@ namespace VENTANASMAD
         {
             DateTime date = DateTime.Today;
             int month = date.Month;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AgregarPercepcion f3 = new AgregarPercepcion();
+            f3.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AgregarDeduccion f3 = new AgregarDeduccion();
+            f3.ShowDialog();
         }
     }
 }
