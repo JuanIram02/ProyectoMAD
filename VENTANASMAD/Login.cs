@@ -25,7 +25,7 @@ namespace VENTANASMAD
 
             var db = new EnlaceDB();
 
-            string query = "SELECT * FROM Empleados WHERE NombreU LIKE '" + textBox18.Text + "' AND Contraseña LIKE '" + textBox12.Text + "'";
+            string query = "EXEC sp_GestionEmpleados @Op = 'N', @NombreU = '" + textBox18.Text +  "', @Contraseña = '" + textBox12.Text + "';";
 
             var usuario = db.ConsultaTabla(query);
 
