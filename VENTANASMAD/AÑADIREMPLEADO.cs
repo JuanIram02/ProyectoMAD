@@ -19,8 +19,7 @@ namespace VENTANASMAD
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form1 f7 = new Form1();
-            f7.ShowDialog();
+            this.Close();
         }
     }
 }
