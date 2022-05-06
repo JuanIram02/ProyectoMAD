@@ -53,8 +53,8 @@ namespace VENTANASMAD
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -110,7 +110,7 @@ namespace VENTANASMAD
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(83, 240);
+            this.label5.Location = new System.Drawing.Point(83, 238);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(166, 15);
@@ -134,12 +134,12 @@ namespace VENTANASMAD
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(83, 333);
+            this.label7.Location = new System.Drawing.Point(83, 339);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 15);
+            this.label7.Size = new System.Drawing.Size(52, 15);
             this.label7.TabIndex = 6;
-            this.label7.Text = "Teléfonos";
+            this.label7.Text = "Teléfono";
             // 
             // label8
             // 
@@ -182,7 +182,7 @@ namespace VENTANASMAD
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(365, 240);
+            this.label11.Location = new System.Drawing.Point(365, 238);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(57, 15);
@@ -197,16 +197,16 @@ namespace VENTANASMAD
             this.label12.Location = new System.Drawing.Point(365, 288);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(42, 15);
+            this.label12.Size = new System.Drawing.Size(28, 15);
             this.label12.TabIndex = 11;
-            this.label12.Text = "Estado";
+            this.label12.Text = "Pais";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(365, 333);
+            this.label13.Location = new System.Drawing.Point(365, 339);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(76, 15);
@@ -307,23 +307,21 @@ namespace VENTANASMAD
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // comboBox5
+            // textBox9
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(367, 257);
-            this.comboBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(199, 21);
-            this.comboBox5.TabIndex = 91;
+            this.textBox9.Location = new System.Drawing.Point(368, 256);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(199, 20);
+            this.textBox9.TabIndex = 27;
             // 
-            // comboBox1
+            // textBox10
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(367, 305);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(199, 21);
-            this.comboBox1.TabIndex = 92;
+            this.textBox10.Location = new System.Drawing.Point(367, 305);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(199, 20);
+            this.textBox10.TabIndex = 28;
             // 
             // empresa
             // 
@@ -331,8 +329,8 @@ namespace VENTANASMAD
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(677, 472);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.comboBox5);
+            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.textBox9);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox11);
             this.Controls.Add(this.textBox8);
@@ -393,7 +391,7 @@ namespace VENTANASMAD
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox10;
     }
 }

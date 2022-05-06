@@ -16,23 +16,34 @@ namespace VENTANASMAD
             InitializeComponent();
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AÑADIREMPLEADO f5 = new AÑADIREMPLEADO();
-            f5.ShowDialog();
-        }
+            var db = new EnlaceDB();
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            DateTime date = DateTime.Today;
-            int month = date.Month;
-        }
+            var query = "EXEC sp_GestionDepartamentos @Op = 'X'";
 
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-            DateTime date = DateTime.Today;
-            int month = date.Month;
+            var dptos = db.ConsultaTabla(query);
+
+            if (dptos.Rows.Count != 0)
+            {
+                var query2 = "EXEC sp_GestionPuestos @Op = 'X'";
+
+                var puestos = db.ConsultaTabla(query2);
+
+                if (puestos.Rows.Count != 0)
+                {
+                    AÑADIREMPLEADO f5 = new AÑADIREMPLEADO();
+                    f5.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Antes registe un Puesto", "Aviso");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Antes registe un Departamento", "Aviso");
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -47,6 +58,11 @@ namespace VENTANASMAD
             this.Hide();
             AgregarDeduccion f3 = new AgregarDeduccion();
             f3.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

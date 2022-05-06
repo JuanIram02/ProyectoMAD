@@ -64,7 +64,7 @@ namespace VENTANASMAD
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(774, 276);
+            this.dataGridView1.Size = new System.Drawing.Size(774, 268);
             this.dataGridView1.TabIndex = 84;
             // 
             // button1
@@ -105,7 +105,7 @@ namespace VENTANASMAD
             this.button3.TabIndex = 83;
             this.button3.Text = "Nuevo Empleado";
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // textBox17
             // 
@@ -159,6 +159,7 @@ namespace VENTANASMAD
             this.button4.TabIndex = 126;
             this.button4.Text = "Buscar Empleado";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 

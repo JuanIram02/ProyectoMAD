@@ -73,8 +73,6 @@ namespace VENTANASMAD
                 MessageBox.Show("Antes registe un Departamento", "Aviso");
             }
 
-       
-            
         }
     }
 }

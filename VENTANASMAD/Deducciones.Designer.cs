@@ -56,7 +56,7 @@ namespace VENTANASMAD
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(770, 205);
+            this.dataGridView1.Size = new System.Drawing.Size(770, 242);
             this.dataGridView1.TabIndex = 111;
             // 
             // button4
@@ -234,7 +234,7 @@ namespace VENTANASMAD
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(796, 447);
+            this.ClientSize = new System.Drawing.Size(796, 484);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);

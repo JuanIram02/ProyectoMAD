@@ -65,8 +65,9 @@ namespace VENTANASMAD
             this.BarraTitulo.Controls.Add(this.btnCerrar);
             this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.BarraTitulo.Location = new System.Drawing.Point(0, 0);
+            this.BarraTitulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BarraTitulo.Name = "BarraTitulo";
-            this.BarraTitulo.Size = new System.Drawing.Size(1300, 38);
+            this.BarraTitulo.Size = new System.Drawing.Size(975, 31);
             this.BarraTitulo.TabIndex = 0;
             this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
             // 
@@ -74,9 +75,10 @@ namespace VENTANASMAD
             // 
             this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurar.Image")));
-            this.btnRestaurar.Location = new System.Drawing.Point(1211, 7);
+            this.btnRestaurar.Location = new System.Drawing.Point(908, 6);
+            this.btnRestaurar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRestaurar.Name = "btnRestaurar";
-            this.btnRestaurar.Size = new System.Drawing.Size(34, 25);
+            this.btnRestaurar.Size = new System.Drawing.Size(26, 20);
             this.btnRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnRestaurar.TabIndex = 3;
             this.btnRestaurar.TabStop = false;
@@ -87,9 +89,10 @@ namespace VENTANASMAD
             // 
             this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
-            this.btnMaximizar.Location = new System.Drawing.Point(1211, 7);
+            this.btnMaximizar.Location = new System.Drawing.Point(908, 6);
+            this.btnMaximizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(34, 25);
+            this.btnMaximizar.Size = new System.Drawing.Size(26, 20);
             this.btnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMaximizar.TabIndex = 2;
             this.btnMaximizar.TabStop = false;
@@ -99,9 +102,10 @@ namespace VENTANASMAD
             // 
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(1155, 10);
+            this.btnMinimizar.Location = new System.Drawing.Point(866, 8);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(34, 25);
+            this.btnMinimizar.Size = new System.Drawing.Size(26, 20);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinimizar.TabIndex = 1;
             this.btnMinimizar.TabStop = false;
@@ -111,9 +115,10 @@ namespace VENTANASMAD
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(1263, 10);
+            this.btnCerrar.Location = new System.Drawing.Point(947, 8);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
+            this.btnCerrar.Size = new System.Drawing.Size(19, 20);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrar.TabIndex = 0;
             this.btnCerrar.TabStop = false;
@@ -131,9 +136,10 @@ namespace VENTANASMAD
             this.MenuVertical.Controls.Add(this.btnDepartamentos);
             this.MenuVertical.Controls.Add(this.btnEmpresa);
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
-            this.MenuVertical.Location = new System.Drawing.Point(0, 38);
+            this.MenuVertical.Location = new System.Drawing.Point(0, 31);
+            this.MenuVertical.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MenuVertical.Name = "MenuVertical";
-            this.MenuVertical.Size = new System.Drawing.Size(200, 612);
+            this.MenuVertical.Size = new System.Drawing.Size(150, 497);
             this.MenuVertical.TabIndex = 1;
             // 
             // button2
@@ -143,9 +149,10 @@ namespace VENTANASMAD
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(0, 441);
+            this.button2.Location = new System.Drawing.Point(0, 357);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 38);
+            this.button2.Size = new System.Drawing.Size(150, 26);
             this.button2.TabIndex = 7;
             this.button2.Text = "Nómina";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -159,9 +166,10 @@ namespace VENTANASMAD
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 376);
+            this.button1.Location = new System.Drawing.Point(0, 318);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 59);
+            this.button1.Size = new System.Drawing.Size(150, 26);
             this.button1.TabIndex = 6;
             this.button1.Text = "Deducciones";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -176,9 +184,10 @@ namespace VENTANASMAD
             this.btninicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btninicio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btninicio.ForeColor = System.Drawing.Color.White;
-            this.btninicio.Location = new System.Drawing.Point(0, 45);
+            this.btninicio.Location = new System.Drawing.Point(0, 58);
+            this.btninicio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btninicio.Name = "btninicio";
-            this.btninicio.Size = new System.Drawing.Size(200, 32);
+            this.btninicio.Size = new System.Drawing.Size(150, 26);
             this.btninicio.TabIndex = 5;
             this.btninicio.Text = "Inicio";
             this.btninicio.UseVisualStyleBackColor = true;
@@ -191,9 +200,10 @@ namespace VENTANASMAD
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(0, 302);
+            this.button5.Location = new System.Drawing.Point(0, 275);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(200, 68);
+            this.button5.Size = new System.Drawing.Size(150, 32);
             this.button5.TabIndex = 4;
             this.button5.Text = "Percepciones";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -207,9 +217,10 @@ namespace VENTANASMAD
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(0, 264);
+            this.button4.Location = new System.Drawing.Point(0, 234);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(200, 32);
+            this.button4.Size = new System.Drawing.Size(150, 35);
             this.button4.TabIndex = 3;
             this.button4.Text = "Empleados";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -223,9 +234,10 @@ namespace VENTANASMAD
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(0, 226);
+            this.button3.Location = new System.Drawing.Point(0, 200);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(200, 32);
+            this.button3.Size = new System.Drawing.Size(150, 26);
             this.button3.TabIndex = 2;
             this.button3.Text = "Puesto";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -239,9 +251,10 @@ namespace VENTANASMAD
             this.btnDepartamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDepartamentos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDepartamentos.ForeColor = System.Drawing.Color.White;
-            this.btnDepartamentos.Location = new System.Drawing.Point(0, 188);
+            this.btnDepartamentos.Location = new System.Drawing.Point(0, 155);
+            this.btnDepartamentos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDepartamentos.Name = "btnDepartamentos";
-            this.btnDepartamentos.Size = new System.Drawing.Size(200, 32);
+            this.btnDepartamentos.Size = new System.Drawing.Size(150, 35);
             this.btnDepartamentos.TabIndex = 1;
             this.btnDepartamentos.Text = "Departamentos";
             this.btnDepartamentos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -256,9 +269,10 @@ namespace VENTANASMAD
             this.btnEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmpresa.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmpresa.ForeColor = System.Drawing.Color.White;
-            this.btnEmpresa.Location = new System.Drawing.Point(0, 150);
+            this.btnEmpresa.Location = new System.Drawing.Point(0, 118);
+            this.btnEmpresa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEmpresa.Name = "btnEmpresa";
-            this.btnEmpresa.Size = new System.Drawing.Size(200, 32);
+            this.btnEmpresa.Size = new System.Drawing.Size(150, 30);
             this.btnEmpresa.TabIndex = 0;
             this.btnEmpresa.Text = "Empresa";
             this.btnEmpresa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -271,31 +285,34 @@ namespace VENTANASMAD
             this.panelContenedor.Controls.Add(this.pictureBox1);
             this.panelContenedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.Location = new System.Drawing.Point(200, 38);
+            this.panelContenedor.Location = new System.Drawing.Point(150, 31);
+            this.panelContenedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1100, 612);
+            this.panelContenedor.Size = new System.Drawing.Size(825, 497);
             this.panelContenedor.TabIndex = 2;
             this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.btnCerrar_Paint);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::VENTANASMAD.Properties.Resources.MAADLOGO;
-            this.pictureBox1.Location = new System.Drawing.Point(332, 115);
+            this.pictureBox1.Location = new System.Drawing.Point(249, 93);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(384, 364);
+            this.pictureBox1.Size = new System.Drawing.Size(288, 296);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1300, 650);
+            this.ClientSize = new System.Drawing.Size(975, 528);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.MenuVertical);
             this.Controls.Add(this.BarraTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.BarraTitulo.ResumeLayout(false);

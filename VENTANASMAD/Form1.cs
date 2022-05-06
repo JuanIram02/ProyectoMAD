@@ -54,6 +54,7 @@ namespace VENTANASMAD
         {
             AbrirFormHija(new empresa());
         }
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
