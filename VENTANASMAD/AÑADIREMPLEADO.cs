@@ -17,7 +17,7 @@ namespace VENTANASMAD
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
 
             var db = new EnlaceDB();
@@ -87,6 +87,35 @@ namespace VENTANASMAD
             //db.ConsultaTabla(query5);
 
             this.Close();
+        }
+
+        private void AÑADIREMPLEADO_Load(object sender, EventArgs e)
+        {
+            var db = new EnlaceDB();
+
+            var query = "EXEC sp_GestionDepartamentos @Op = 'X'";
+
+            var dptos = db.ConsultaTabla(query);
+
+            for (int i = 0; dptos.Rows.Count > i; i++)
+            {
+                comboBox2.Items.Add(dptos.Rows[i][1]);
+            }
+
+            var query2 = "EXEC sp_GestionPuestos @Op = 'X'";
+
+            var puestos = db.ConsultaTabla(query2);
+
+            for (int i = 0; puestos.Rows.Count > i; i++)
+            {
+                comboBox1.Items.Add(puestos.Rows[i][1]);
+            }
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

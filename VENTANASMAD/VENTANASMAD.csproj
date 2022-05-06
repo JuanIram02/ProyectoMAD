@@ -128,12 +128,6 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Registrate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Registrate.Designer.cs">
-      <DependentUpon>Registrate.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="AgregarDeduccion.resx">
       <DependentUpon>AgregarDeduccion.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,9 +176,6 @@
     </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Registrate.resx">
-      <DependentUpon>Registrate.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

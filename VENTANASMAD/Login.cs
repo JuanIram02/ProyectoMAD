@@ -45,9 +45,36 @@ namespace VENTANASMAD
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Registrate f3 = new Registrate();
-            f3.ShowDialog();
+
+            var db = new EnlaceDB();
+
+            var query = "EXEC sp_GestionDepartamentos @Op = 'X'";
+
+            var dptos = db.ConsultaTabla(query);
+
+            if (dptos.Rows.Count != 0)
+            {
+                var query2 = "EXEC sp_GestionPuestos @Op = 'X'";
+
+                var puestos = db.ConsultaTabla(query2);
+
+                if (puestos.Rows.Count != 0)
+                {
+                    AÑADIREMPLEADO f3 = new AÑADIREMPLEADO();
+                    f3.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Antes registe un Puesto", "Aviso");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Antes registe un Departamento", "Aviso");
+            }
+
+       
+            
         }
     }
 }

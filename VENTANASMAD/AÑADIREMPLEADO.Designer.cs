@@ -84,7 +84,7 @@ namespace VENTANASMAD
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(62, 246);
+            this.dateTimePicker1.Location = new System.Drawing.Point(62, 233);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(199, 20);
@@ -93,7 +93,7 @@ namespace VENTANASMAD
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(284, 245);
+            this.comboBox3.Location = new System.Drawing.Point(284, 232);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(199, 21);
@@ -102,7 +102,7 @@ namespace VENTANASMAD
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(284, 395);
+            this.comboBox2.Location = new System.Drawing.Point(284, 382);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(199, 21);
@@ -111,7 +111,7 @@ namespace VENTANASMAD
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(507, 396);
+            this.comboBox1.Location = new System.Drawing.Point(507, 383);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(199, 21);
@@ -122,7 +122,7 @@ namespace VENTANASMAD
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(281, 378);
+            this.label20.Location = new System.Drawing.Point(281, 365);
             this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(86, 15);
@@ -134,7 +134,7 @@ namespace VENTANASMAD
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(505, 378);
+            this.label21.Location = new System.Drawing.Point(505, 365);
             this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(42, 15);
@@ -143,7 +143,7 @@ namespace VENTANASMAD
             // 
             // textBox13
             // 
-            this.textBox13.Location = new System.Drawing.Point(62, 343);
+            this.textBox13.Location = new System.Drawing.Point(62, 330);
             this.textBox13.Margin = new System.Windows.Forms.Padding(2);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(199, 20);
@@ -151,7 +151,7 @@ namespace VENTANASMAD
             // 
             // textBox14
             // 
-            this.textBox14.Location = new System.Drawing.Point(284, 343);
+            this.textBox14.Location = new System.Drawing.Point(284, 330);
             this.textBox14.Margin = new System.Windows.Forms.Padding(2);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(199, 20);
@@ -159,7 +159,7 @@ namespace VENTANASMAD
             // 
             // textBox16
             // 
-            this.textBox16.Location = new System.Drawing.Point(62, 192);
+            this.textBox16.Location = new System.Drawing.Point(62, 179);
             this.textBox16.Margin = new System.Windows.Forms.Padding(2);
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(199, 20);
@@ -167,7 +167,7 @@ namespace VENTANASMAD
             // 
             // textBox17
             // 
-            this.textBox17.Location = new System.Drawing.Point(62, 142);
+            this.textBox17.Location = new System.Drawing.Point(62, 129);
             this.textBox17.Margin = new System.Windows.Forms.Padding(2);
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(199, 20);
@@ -175,7 +175,7 @@ namespace VENTANASMAD
             // 
             // textBox18
             // 
-            this.textBox18.Location = new System.Drawing.Point(62, 92);
+            this.textBox18.Location = new System.Drawing.Point(62, 79);
             this.textBox18.Margin = new System.Windows.Forms.Padding(2);
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(199, 20);
@@ -186,7 +186,7 @@ namespace VENTANASMAD
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(59, 325);
+            this.label7.Location = new System.Drawing.Point(59, 312);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 15);
@@ -198,7 +198,7 @@ namespace VENTANASMAD
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(281, 326);
+            this.label14.Location = new System.Drawing.Point(281, 313);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(104, 15);
@@ -210,7 +210,7 @@ namespace VENTANASMAD
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(59, 228);
+            this.label15.Location = new System.Drawing.Point(59, 215);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(115, 15);
@@ -222,7 +222,7 @@ namespace VENTANASMAD
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(59, 176);
+            this.label16.Location = new System.Drawing.Point(59, 163);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(95, 15);
@@ -234,7 +234,7 @@ namespace VENTANASMAD
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(59, 125);
+            this.label17.Location = new System.Drawing.Point(59, 112);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(92, 15);
@@ -246,7 +246,7 @@ namespace VENTANASMAD
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(59, 76);
+            this.label18.Location = new System.Drawing.Point(59, 63);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(62, 15);
@@ -255,7 +255,7 @@ namespace VENTANASMAD
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(62, 395);
+            this.textBox1.Location = new System.Drawing.Point(62, 382);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(199, 20);
@@ -263,7 +263,7 @@ namespace VENTANASMAD
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(284, 297);
+            this.textBox2.Location = new System.Drawing.Point(284, 284);
             this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(199, 20);
@@ -271,7 +271,7 @@ namespace VENTANASMAD
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(284, 192);
+            this.textBox5.Location = new System.Drawing.Point(284, 179);
             this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(199, 20);
@@ -279,7 +279,7 @@ namespace VENTANASMAD
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(284, 142);
+            this.textBox6.Location = new System.Drawing.Point(284, 129);
             this.textBox6.Margin = new System.Windows.Forms.Padding(2);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(199, 20);
@@ -287,7 +287,7 @@ namespace VENTANASMAD
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(284, 92);
+            this.textBox12.Location = new System.Drawing.Point(284, 79);
             this.textBox12.Margin = new System.Windows.Forms.Padding(2);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(199, 20);
@@ -298,7 +298,7 @@ namespace VENTANASMAD
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(59, 377);
+            this.label1.Location = new System.Drawing.Point(59, 364);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 15);
@@ -310,7 +310,7 @@ namespace VENTANASMAD
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(281, 280);
+            this.label2.Location = new System.Drawing.Point(281, 267);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 15);
@@ -322,7 +322,7 @@ namespace VENTANASMAD
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(281, 228);
+            this.label3.Location = new System.Drawing.Point(281, 215);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 15);
@@ -334,7 +334,7 @@ namespace VENTANASMAD
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(281, 176);
+            this.label4.Location = new System.Drawing.Point(281, 163);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(30, 15);
@@ -346,7 +346,7 @@ namespace VENTANASMAD
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(281, 125);
+            this.label5.Location = new System.Drawing.Point(281, 112);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(30, 15);
@@ -358,7 +358,7 @@ namespace VENTANASMAD
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(281, 76);
+            this.label6.Location = new System.Drawing.Point(281, 63);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(33, 15);
@@ -367,7 +367,7 @@ namespace VENTANASMAD
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(507, 343);
+            this.textBox11.Location = new System.Drawing.Point(507, 330);
             this.textBox11.Margin = new System.Windows.Forms.Padding(2);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(199, 20);
@@ -375,7 +375,7 @@ namespace VENTANASMAD
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(507, 297);
+            this.textBox10.Location = new System.Drawing.Point(507, 284);
             this.textBox10.Margin = new System.Windows.Forms.Padding(2);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(199, 20);
@@ -383,7 +383,7 @@ namespace VENTANASMAD
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(507, 192);
+            this.textBox8.Location = new System.Drawing.Point(507, 179);
             this.textBox8.Margin = new System.Windows.Forms.Padding(2);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(199, 20);
@@ -391,7 +391,7 @@ namespace VENTANASMAD
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(507, 142);
+            this.textBox7.Location = new System.Drawing.Point(507, 129);
             this.textBox7.Margin = new System.Windows.Forms.Padding(2);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(199, 20);
@@ -399,7 +399,7 @@ namespace VENTANASMAD
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(507, 92);
+            this.textBox4.Location = new System.Drawing.Point(507, 79);
             this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(199, 20);
@@ -410,7 +410,7 @@ namespace VENTANASMAD
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(505, 325);
+            this.label13.Location = new System.Drawing.Point(505, 312);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(76, 15);
@@ -422,7 +422,7 @@ namespace VENTANASMAD
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(505, 280);
+            this.label12.Location = new System.Drawing.Point(505, 267);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(28, 15);
@@ -434,7 +434,7 @@ namespace VENTANASMAD
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(505, 228);
+            this.label11.Location = new System.Drawing.Point(505, 215);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(57, 15);
@@ -446,7 +446,7 @@ namespace VENTANASMAD
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(505, 176);
+            this.label10.Location = new System.Drawing.Point(505, 163);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(46, 15);
@@ -458,7 +458,7 @@ namespace VENTANASMAD
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(505, 125);
+            this.label9.Location = new System.Drawing.Point(505, 112);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(50, 15);
@@ -470,7 +470,7 @@ namespace VENTANASMAD
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(505, 76);
+            this.label8.Location = new System.Drawing.Point(505, 63);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(33, 15);
@@ -482,7 +482,7 @@ namespace VENTANASMAD
             this.button3.BackColor = System.Drawing.Color.Blue;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(623, 491);
+            this.button3.Location = new System.Drawing.Point(623, 484);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(116, 40);
@@ -508,18 +508,18 @@ namespace VENTANASMAD
             this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(486, 491);
+            this.button1.Location = new System.Drawing.Point(486, 484);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(116, 40);
             this.button1.TabIndex = 134;
             this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button3_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(507, 245);
+            this.textBox3.Location = new System.Drawing.Point(507, 232);
             this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(199, 20);
@@ -527,7 +527,7 @@ namespace VENTANASMAD
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(62, 449);
+            this.textBox9.Location = new System.Drawing.Point(62, 436);
             this.textBox9.Margin = new System.Windows.Forms.Padding(2);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(199, 20);
@@ -538,7 +538,7 @@ namespace VENTANASMAD
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(59, 431);
+            this.label23.Location = new System.Drawing.Point(59, 418);
             this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(61, 15);
@@ -547,7 +547,7 @@ namespace VENTANASMAD
             // 
             // textBox15
             // 
-            this.textBox15.Location = new System.Drawing.Point(62, 506);
+            this.textBox15.Location = new System.Drawing.Point(62, 493);
             this.textBox15.Margin = new System.Windows.Forms.Padding(2);
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(199, 20);
@@ -558,7 +558,7 @@ namespace VENTANASMAD
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(59, 488);
+            this.label24.Location = new System.Drawing.Point(59, 475);
             this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(61, 15);
@@ -567,7 +567,7 @@ namespace VENTANASMAD
             // 
             // textBox19
             // 
-            this.textBox19.Location = new System.Drawing.Point(62, 297);
+            this.textBox19.Location = new System.Drawing.Point(62, 284);
             this.textBox19.Margin = new System.Windows.Forms.Padding(2);
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(199, 20);
@@ -578,7 +578,7 @@ namespace VENTANASMAD
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(59, 280);
+            this.label19.Location = new System.Drawing.Point(59, 267);
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(48, 15);
@@ -589,7 +589,7 @@ namespace VENTANASMAD
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.ForeColor = System.Drawing.Color.White;
-            this.radioButton2.Location = new System.Drawing.Point(295, 469);
+            this.radioButton2.Location = new System.Drawing.Point(295, 456);
             this.radioButton2.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(72, 17);
@@ -602,7 +602,7 @@ namespace VENTANASMAD
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.ForeColor = System.Drawing.Color.White;
-            this.radioButton1.Location = new System.Drawing.Point(295, 442);
+            this.radioButton1.Location = new System.Drawing.Point(295, 429);
             this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(63, 17);
@@ -672,6 +672,7 @@ namespace VENTANASMAD
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AÑADIREMPLEADO";
             this.Text = "AÑADIREMPLEADO";
+            this.Load += new System.EventHandler(this.AÑADIREMPLEADO_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
