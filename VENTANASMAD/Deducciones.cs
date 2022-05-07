@@ -28,12 +28,16 @@ namespace VENTANASMAD
             
             if(id == "")
             {
-                textBox12.Text = "0";
+                textBox12.Text = "1";
             }
             else
             {
                 textBox12.Text = (Int32.Parse(id) + 1).ToString();
             }
+
+            var query2 = "EXEC sp_GestionDeducciones @Op = 'V'";
+            var deducciones = db.ConsultaTabla(query2);
+            dataGridView1.DataSource = deducciones;
             
         }
 
@@ -79,17 +83,22 @@ namespace VENTANASMAD
 
                 if (id == "")
                 {
-                    textBox12.Text = "0";
+                    textBox12.Text = "1";
                 }
                 else
                 {
                     textBox12.Text = (Int32.Parse(id) + 1).ToString();
                 }
 
+                textBox6.Clear();
+                textBox17.Clear();
+
             }
 
-            
-            
+            var query3 = "EXEC sp_GestionDeducciones @Op = 'V'";
+            var deducciones = db.ConsultaTabla(query3);
+            dataGridView1.DataSource = deducciones;
+
         }
     }
 }
