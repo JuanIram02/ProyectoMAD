@@ -196,6 +196,7 @@ namespace VENTANASMAD
             this.button1.TabIndex = 124;
             this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label22
             // 
@@ -255,6 +256,7 @@ namespace VENTANASMAD
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Deducciones";
             this.Text = "Deducciones";
+            this.Load += new System.EventHandler(this.Deducciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
