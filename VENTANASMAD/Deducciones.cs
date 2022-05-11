@@ -21,8 +21,7 @@ namespace VENTANASMAD
         {
             var db = new EnlaceDB();
 
-            var query = "SELECT MAX(IDDeduccion) FROM Deducciones";
-            var sl = db.ConsultaTabla(query);
+            var sl = db.gestionDeducciones("M", "null", "null", "null", "null");
             var rw = sl.Rows[0];
             var id = rw[0].ToString();
             
@@ -34,9 +33,8 @@ namespace VENTANASMAD
             {
                 textBox12.Text = (Int32.Parse(id) + 1).ToString();
             }
-
-            var query2 = "EXEC sp_GestionDeducciones @Op = 'V'";
-            var deducciones = db.ConsultaTabla(query2);
+            
+            var deducciones = db.gestionDeducciones("V", "null", "null", "null", "null");
             dataGridView1.DataSource = deducciones;
             
         }
@@ -44,8 +42,6 @@ namespace VENTANASMAD
         private void button1_Click(object sender, EventArgs e)
         {
             var db = new EnlaceDB();
-
-            string query = "";
 
             int cp = 3;
             
@@ -67,17 +63,14 @@ namespace VENTANASMAD
             {
                 if(cp == 1)
                 {
-                    query = "EXEC sp_GestionDeducciones @Op = 'I', @Cantidad = " + textBox6.Text + ", @Descripcion = '" + textBox17.Text + "';";
+                    db.gestionDeducciones("I", "null", "null", textBox6.Text, textBox17.Text);
                 }
                 else
                 {
-                    query = "EXEC sp_GestionDeducciones @Op = 'I', @Porcentaje = " + textBox6.Text + ", @Descripcion = '" + textBox17.Text + "';";
+                    db.gestionDeducciones("I", "null", textBox6.Text, "null", textBox17.Text);
                 }
-
-                db.ConsultaTabla(query);
-
-                var query2 = "SELECT MAX(IDDeduccion) FROM Deducciones";
-                var sl = db.ConsultaTabla(query2);
+                               
+                var sl = db.gestionDeducciones("M", "null", "null", "null", "null");
                 var rw = sl.Rows[0];
                 var id = rw[0].ToString();
 
@@ -95,8 +88,7 @@ namespace VENTANASMAD
 
             }
 
-            var query3 = "EXEC sp_GestionDeducciones @Op = 'V'";
-            var deducciones = db.ConsultaTabla(query3);
+            var deducciones = db.gestionDeducciones("V", "null", "null", "null", "null");
             dataGridView1.DataSource = deducciones;
 
         }

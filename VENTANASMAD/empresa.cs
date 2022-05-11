@@ -21,16 +21,30 @@ namespace VENTANASMAD
         {
             var db = new EnlaceDB();
 
-            var query = "EXEC sp_GestionEmpresa @Op = 'T'";
-
-            var empresa = db.ConsultaTabla(query);
+            var empresa = db.gestionEmpresa("T", "null", "null", "null", "null", "null", "null");
 
             if(empresa.Rows.Count == 0)
             {
                 MessageBox.Show("Registre una empresa", "Aviso");
 
                 button1.Text = "Agregar";
+                dateTimePicker1.Text = "Seleccione Fecha";
 
+            }
+            else
+            {
+                var d = db.gestionDomicilios("S", empresa.Rows[0][4].ToString(), "null", "null", "null", "null", "null", "null");
+                var t = db.gestionTelefonos("S", empresa.Rows[0][5].ToString(), "null", "null", "null");
+                textBox1.Text = empresa.Rows[0][1].ToString();
+                textBox2.Text = empresa.Rows[0][2].ToString();
+                textBox3.Text = empresa.Rows[0][0].ToString();
+                dateTimePicker1.Text = empresa.Rows[0][3].ToString();
+                textBox4.Text = d.Rows[0][1].ToString();
+                textBox7.Text = d.Rows[0][2].ToString();
+                textBox8.Text = d.Rows[0][3].ToString();
+                textBox9.Text = d.Rows[0][5].ToString();
+                textBox10.Text = d.Rows[0][6].ToString();
+                textBox11.Text = d.Rows[0][4].ToString();
             }
         }
 
@@ -38,21 +52,15 @@ namespace VENTANASMAD
         {
             var db = new EnlaceDB();
 
-            var query1 = "EXEC sp_GestionDomicilios @Op = 'I', @Calle = '" + textBox4.Text + "', @Numero = '" + textBox7.Text + "', @Apartamento = '" + textBox8.Text + "', @CodigoPostal = '" + textBox11.Text + "', @Ciudad = '" + textBox9.Text + "', @Pais = '" + textBox10.Text + "'";
+            db.gestionDomicilios("I", "null", textBox4.Text, textBox7.Text, textBox8.Text, textBox11.Text, textBox9.Text, textBox10.Text);
 
-            //db.ConsultaTabla(query1);
-
-            var query2 = "SELECT MAX(IDDomicilio) FROM Domicilios";
-            var sl = db.ConsultaTabla(query2);
+            var sl = db.gestionDomicilios("M", "null", "null", "null", "null", "null", "null", "null");
             var rw = sl.Rows[0];
             var domicilio = rw[0];
-
-            var query3 = "EXEC sp_GestionTelefonos @Op = 'I', @Telefono1 = '" + textBox6.Text + "'";
-
-            //db.ConsultaTabla(query3);
-
-            var query4 = "SELECT MAX(IDTelefonos) FROM Telefonos";
-            var sl2 = db.ConsultaTabla(query4);
+           
+            db.gestionTelefonos("I", "null", textBox6.Text, "null", "null");
+          
+            var sl2 = db.gestionTelefonos("M", "null", "null", "null", "null");
             var rw2 = sl2.Rows[0];
             var telefonos = rw2[0];
 
@@ -76,20 +84,18 @@ namespace VENTANASMAD
                 dia = dateTimePicker1.Value.Day.ToString();
             }
 
-            string fechaI = dateTimePicker1.Value.Year.ToString() + mes + dia;
-
-            string query5;
+            string fechaI = "'" + dateTimePicker1.Value.Year.ToString() + mes + dia + "'";
 
             if(button1.Text == "Agregar")
             {
-                query5 = "EXEC sp_GestionEmpresa @Op = 'I', @RFC = '" + textBox3.Text + "', @RazonSocial = '" + textBox1.Text + "', @RegistroPatronal = '" + textBox2.Text + "', @Fecha_Inicio = '" + fechaI + "', @Domicilio = " + domicilio + ", @Telefono = " + telefonos + ");";
+                db.gestionEmpresa("I", textBox3.Text, textBox1.Text, textBox2.Text, fechaI, domicilio.ToString(), telefonos.ToString());
+                MessageBox.Show("Empresa registrada exitosamente", "Aviso");
             }
             else
             {
-                query5 = "EXEC sp_GestionEmpresa @Op = 'U', @RFC = '" + textBox3.Text + "', @RazonSocial = '" + textBox1.Text + "', @RegistroPatronal = '" + textBox2.Text + "', @Fecha_Inicio = '" + fechaI + "', @Domicilio = " + domicilio + ", @Telefono = " + telefonos + ");";
+                db.gestionEmpresa("U", textBox3.Text, textBox1.Text, textBox2.Text, fechaI, domicilio.ToString(), telefonos.ToString());
+                MessageBox.Show("Empresa editada exitosamente", "Aviso");
             }
-
-            db.ConsultaTabla(query5);
 
         }
     }

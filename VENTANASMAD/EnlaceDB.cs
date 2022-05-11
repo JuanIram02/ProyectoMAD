@@ -38,45 +38,7 @@ namespace VENTANASMAD
         private static void desconectar()
         {
             _conexion.Close();
-        }
-
-        public bool Autentificar(string us, string ps)
-        {
-            bool isValid = false;
-            try
-            {
-                conectar();
-                string qry = "SP_ValidaUser";
-                _comandosql = new SqlCommand(qry, _conexion);
-                _comandosql.CommandType = CommandType.StoredProcedure;
-                _comandosql.CommandTimeout = 9000;
-
-                var parametro1 = _comandosql.Parameters.Add("@u", SqlDbType.Char, 20);
-                parametro1.Value = us;
-                var parametro2 = _comandosql.Parameters.Add("@p", SqlDbType.Char, 20);
-                parametro2.Value = ps;
-
-                _adaptador.SelectCommand = _comandosql;
-                _adaptador.Fill(_tabla);
-
-                if(_tabla.Rows.Count > 0)
-                {
-                    isValid = true;
-                }
-
-            }
-            catch(SqlException e)
-            {
-                isValid = false;
-            }
-            finally
-            {
-                desconectar();
-            }
-
-            return isValid;
-        }
-
+        }      
         public DataTable ConsultaTabla(string SP)
         {
             var msg = "";
@@ -107,21 +69,19 @@ namespace VENTANASMAD
             return tabla;
         }
 
-        public DataTable get_Deptos(string opc)
+        public DataTable gestionDeducciones(string Op, string IDDeduccion, string Porcentaje, string Cantidad, string Descripcion)
         {
-            var msg = "";
+
+            string qry = "EXEC sp_GestionDeducciones @Op = '" + Op + "', @IDDeduccion = " + IDDeduccion + ", @Porcentaje = " + Porcentaje + ", @Cantidad = " + Cantidad + ", @Descripcion = '" + Descripcion + "'";
+            
             DataTable tabla = new DataTable();
+
             try
             {
                 conectar();
-                string qry = "sp_Gestiona_Deptos";
                 _comandosql = new SqlCommand(qry, _conexion);
-                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandType = CommandType.Text;
                 _comandosql.CommandTimeout = 1200;
-
-                var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Char, 1);
-                parametro1.Value = opc;
-
 
                 _adaptador.SelectCommand = _comandosql;
                 _adaptador.Fill(tabla);
@@ -129,7 +89,7 @@ namespace VENTANASMAD
             }
             catch (SqlException e)
             {
-                msg = "Excepción de base de datos: \n";
+                var msg = "Excepción de base de datos: \n";
                 msg += e.Message;
                 MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
@@ -141,41 +101,132 @@ namespace VENTANASMAD
             return tabla;
         }
 
-        public bool Add_Deptos(string opc, string depto)
+        public DataTable gestionPercepciones(string Op, string IDPercepcion, string Porcentaje, string Cantidad, string Descripcion)
         {
-            var msg = "";
-            var add = true;
+
+            string qry = "EXEC sp_GestionPercepciones @Op = '" + Op + "', @IDPercepcion = " + IDPercepcion + ", @Porcentaje = " + Porcentaje + ", @Cantidad = " + Cantidad + ", @Descripcion = '" + Descripcion + "'";
+
+            DataTable tabla = new DataTable();
+
             try
             {
                 conectar();
-                string qry = "sp_Gestiona_Deptos";
                 _comandosql = new SqlCommand(qry, _conexion);
-                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandType = CommandType.Text;
                 _comandosql.CommandTimeout = 1200;
 
-                var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Char, 1);
-                parametro1.Value = opc;
-                var parametro2 = _comandosql.Parameters.Add("@Nombre", SqlDbType.VarChar, 20);
-                parametro2.Value = depto;
-
-                _adaptador.InsertCommand = _comandosql;
-                
-                _comandosql.ExecuteNonQuery();
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
 
             }
             catch (SqlException e)
             {
-                add = false;
-                msg = "Excepción de base de datos: \n";
+                var msg = "Excepción de base de datos: \n";
                 msg += e.Message;
                 MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             finally
             {
-                desconectar();                
+                desconectar();
             }
 
-            return add;
+            return tabla;
+        }
+
+        public DataTable gestionEmpresa(string Op, string RFC, string RazonSocial, string RegistroPatronal, string Fecha_Inicio, string Domicilio, string Telefono)
+        {
+
+            string qry = "EXEC sp_GestionEmpresa @Op = '" + Op + "', @RFC = '" + RFC + "', @RazonSocial = '" + RazonSocial + "', @RegistroPatronal = '" + RegistroPatronal + "', @Fecha_Inicio = " + Fecha_Inicio + ", @Domicilio = " + Domicilio + ", @Telefono = " + Telefono + "";
+
+            DataTable tabla = new DataTable();
+
+            try
+            {
+                conectar();
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.Text;
+                _comandosql.CommandTimeout = 1200;
+
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
+
+            }
+            catch (SqlException e)
+            {
+                var msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            return tabla;
+        }
+
+        public DataTable gestionTelefonos(string Op, string IDTelefonos, string Telefono1, string Telefono2, string Telefono3)
+        {
+
+            string qry = "EXEC sp_GestionTelefonos @Op = '" + Op + "', @IDTelefonos = " + IDTelefonos + ", @Telefono1 = " + Telefono1 + ", @Telefono2 = " + Telefono2 + ", @Telefono3 = " + Telefono3 + "";
+
+            DataTable tabla = new DataTable();
+
+            try
+            {
+                conectar();
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.Text;
+                _comandosql.CommandTimeout = 1200;
+
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
+
+            }
+            catch (SqlException e)
+            {
+                var msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            return tabla;
+        }
+
+        public DataTable gestionDomicilios(string Op, string IDDomicilio, string Calle, string Numero, string Apartamento, string CodigoPostal, string Ciudad, string Pais)
+        {
+
+            string qry = "EXEC sp_GestionDomicilios @Op = '" + Op + "', @IDDomicilio = " + IDDomicilio + ", @Calle = '" + Calle + "', @Numero = '" + Numero + "', @Apartamento = '" + Apartamento + "', @CodigoPostal = '" + CodigoPostal + "', @Ciudad = '" + Ciudad + "', @Pais = '" + Pais + "'";
+
+            DataTable tabla = new DataTable();
+
+            try
+            {
+                conectar();
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.Text;
+                _comandosql.CommandTimeout = 1200;
+
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
+
+            }
+            catch (SqlException e)
+            {
+                var msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            return tabla;
         }
 
     }
