@@ -43,15 +43,21 @@ namespace VENTANASMAD
         }
 
         private void button5_Click(object sender, EventArgs e)
-        {           
+        {
+            var db = new EnlaceDB();
+
             var sl = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
 
-            if(sl == 0)
+            if (sl == 0)
             {
                 MessageBox.Show("Seleccione un empleado", "Aviso");
             }
             else
             {
+                var empleado = dataGridView1.CurrentCell.Value.ToString();
+
+                db.setEmpleado(empleado);
+
                 this.Hide();
                 AgregarPercepcion f3 = new AgregarPercepcion();
                 f3.ShowDialog();

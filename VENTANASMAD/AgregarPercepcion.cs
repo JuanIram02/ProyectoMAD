@@ -22,5 +22,18 @@ namespace VENTANASMAD
             Form1 f7 = new Form1();
             f7.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void AgregarPercepcion_Load(object sender, EventArgs e)
+        {
+            var db = new EnlaceDB();
+
+            var percepciones = db.gestionPercepciones("V", "null", "null", "null", "null");
+            dataGridView1.DataSource = percepciones;
+        }
     }
 }

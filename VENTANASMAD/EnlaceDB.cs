@@ -15,20 +15,10 @@ namespace VENTANASMAD
 
         static private string _Sesion;
         static private string _Empleado;
-        static private string _aux { set; get; }
+
         static private SqlConnection _conexion;
         static private SqlDataAdapter _adaptador = new SqlDataAdapter();
         static private SqlCommand _comandosql = new SqlCommand();
-        static private DataTable _tabla = new DataTable();
-        static private DataSet _DS = new DataSet();
-
-        public DataTable obtenertabla
-        {
-            get
-            {
-                return _tabla;
-            }
-        }
 
         public string getSesion()
         {
@@ -37,6 +27,15 @@ namespace VENTANASMAD
         public void setSesion(string sesion)
         {
             _Sesion = sesion;
+        }
+
+        public string getEmpleado()
+        {
+            return _Empleado;
+        }
+        public void setEmpleado(string empleado)
+        {
+            _Empleado = empleado;
         }
 
         private static void conectar()
@@ -180,7 +179,7 @@ namespace VENTANASMAD
         public DataTable gestionTelefonos(string Op, string IDTelefonos, string Telefono1, string Telefono2, string Telefono3)
         {
 
-            string qry = "EXEC sp_GestionTelefonos @Op = '" + Op + "', @IDTelefonos = " + IDTelefonos + ", @Telefono1 = " + Telefono1 + ", @Telefono2 = " + Telefono2 + ", @Telefono3 = " + Telefono3 + "";
+            string qry = "EXEC sp_GestionTelefonos @Op = '" + Op + "', @IDTelefonos = " + IDTelefonos + ", @Telefono1 = '" + Telefono1 + "', @Telefono2 = '" + Telefono2 + "', @Telefono3 = '" + Telefono3 + "'";
 
             DataTable tabla = new DataTable();
 

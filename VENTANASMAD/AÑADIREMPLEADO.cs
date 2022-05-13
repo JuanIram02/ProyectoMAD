@@ -55,7 +55,7 @@ namespace VENTANASMAD
             }
 
             string dia;
-            if (dateTimePicker1.Value.Month < 10)
+            if (dateTimePicker1.Value.Day < 10)
             {
                 dia = "0" + dateTimePicker1.Value.Day.ToString();
             }
