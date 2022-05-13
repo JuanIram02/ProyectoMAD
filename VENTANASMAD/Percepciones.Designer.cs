@@ -105,9 +105,15 @@ namespace VENTANASMAD
             this.button1.TabIndex = 90;
             this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(11, 231);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
@@ -255,6 +261,7 @@ namespace VENTANASMAD
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Percepciones";
             this.Text = "Percepciones";
+            this.Load += new System.EventHandler(this.Percepciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

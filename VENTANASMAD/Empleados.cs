@@ -20,15 +20,11 @@ namespace VENTANASMAD
         {
             var db = new EnlaceDB();
 
-            var query = "EXEC sp_GestionDepartamentos @Op = 'X'";
-
-            var dptos = db.ConsultaTabla(query);
+            var dptos = db.gestionDepartamentos("X", "null", "null", "null", "null");
 
             if (dptos.Rows.Count != 0)
             {
-                var query2 = "EXEC sp_GestionPuestos @Op = 'X'";
-
-                var puestos = db.ConsultaTabla(query2);
+                var puestos = db.gestionPuestos("X", "null", "null", "null", "null");
 
                 if (puestos.Rows.Count != 0)
                 {
@@ -47,10 +43,20 @@ namespace VENTANASMAD
         }
 
         private void button5_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            AgregarPercepcion f3 = new AgregarPercepcion();
-            f3.ShowDialog();
+        {           
+            var sl = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+
+            if(sl == 0)
+            {
+                MessageBox.Show("Seleccione un empleado", "Aviso");
+            }
+            else
+            {
+                this.Hide();
+                AgregarPercepcion f3 = new AgregarPercepcion();
+                f3.ShowDialog();
+            }
+
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -62,6 +68,15 @@ namespace VENTANASMAD
 
         private void button4_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void Empleados_Load(object sender, EventArgs e)
+        {
+            var db = new EnlaceDB();
+
+            var empleados = db.gestionEmpleados("V", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null");
+            dataGridView1.DataSource = empleados;
 
         }
     }

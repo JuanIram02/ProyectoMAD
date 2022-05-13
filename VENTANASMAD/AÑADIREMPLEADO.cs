@@ -22,21 +22,15 @@ namespace VENTANASMAD
 
             var db = new EnlaceDB();
 
-            var query1 = "EXEC sp_GestionDomicilios @Op = 'I', @Calle = '" + textBox4.Text + "', @Numero = '" + textBox7.Text + "', @Apartamento = '" + textBox8.Text + "', @CodigoPostal = '" + textBox11.Text + "', @Ciudad = '" + textBox3.Text + "', @Pais = '" + textBox10.Text + "'";
-            
-            //db.ConsultaTabla(query1);
+            db.gestionDomicilios("I", "null", textBox4.Text, textBox7.Text, textBox8.Text, textBox11.Text, textBox3.Text, textBox10.Text);
 
-            var query2 = "SELECT MAX(IDDomicilio) FROM Domicilios";
-            var sl = db.ConsultaTabla(query2);
+            var sl = db.gestionDomicilios("M", "null", "null", "null", "null", "null", "null", "null");
             var rw = sl.Rows[0];
             var domicilio = rw[0];
 
-            var query3 = "EXEC sp_GestionTelefonos @Op = 'I', @Telefono1 = '" + textBox1.Text + "', @Telefono2 = '" + textBox9.Text + "', @Telefono3 = '" + textBox15.Text + "'";
+            db.gestionTelefonos("I", "null", textBox1.Text, textBox9.Text, textBox15.Text);
 
-            //db.ConsultaTabla(query3);
-
-            var query4 = "SELECT MAX(IDTelefonos) FROM Telefonos";
-            var sl2 = db.ConsultaTabla(query4);
+            var sl2 = db.gestionTelefonos("M", "null", "null", "null", "null");
             var rw2 = sl2.Rows[0];
             var telefonos = rw2[0];
 
@@ -70,7 +64,7 @@ namespace VENTANASMAD
                 dia = dateTimePicker1.Value.Day.ToString();
             }
 
-            string fechaN = dateTimePicker1.Value.Year.ToString() + mes + dia;
+            string fechaN = "'" + dateTimePicker1.Value.Year.ToString() + mes + dia + "'";
 
             string tipoU;
             if (ut)
@@ -81,10 +75,14 @@ namespace VENTANASMAD
             {
                 tipoU = "0";
             }
-            
-            var query5 = "EXEC sp_GestionEmpleados @Op = 'I', @CURP = '" + textBox12.Text + "', @NSS = '" + textBox5.Text + "' , @RFC = '" + textBox6.Text + "' , @NombreU = '" + textBox19.Text + "', @Contraseña = '" + textBox13.Text + "', @TipoUsuario = '" + tipoU + "', @Estatus = '1', @Email = '" + textBox14.Text + "', @Telefono = " + telefonos.ToString() + ", @Domicilio = " + domicilio.ToString() + ", @FechaNacimiento = '" + fechaN + "', @Nombres = '" + textBox18.Text + "', @ApPaterno = '" + textBox17.Text + "', @ApMaterno = '" + textBox16.Text + "', @Departamento = " + comboBox2.Text + ", @Puesto = " + comboBox1.Text + ";";
 
-            //db.ConsultaTabla(query5);
+            var dp = db.gestionDepartamentos("F", "null", comboBox2.Text, "null", "null");
+            var departamento = dp.Rows[0][0];
+
+            var pt = db.gestionPuestos("F", "null", comboBox1.Text, "null", "null");
+            var puesto = pt.Rows[0][0];
+
+            db.gestionEmpleados("I", "null", textBox12.Text, textBox5.Text, textBox6.Text, textBox19.Text, textBox13.Text, tipoU, "1", textBox14.Text, telefonos.ToString(), domicilio.ToString(), fechaN, textBox18.Text, textBox17.Text, textBox16.Text, departamento.ToString(), puesto.ToString());
 
             this.Close();
         }
@@ -93,18 +91,14 @@ namespace VENTANASMAD
         {
             var db = new EnlaceDB();
 
-            var query = "EXEC sp_GestionDepartamentos @Op = 'X'";
-
-            var dptos = db.ConsultaTabla(query);
+            var dptos = db.gestionDepartamentos("X", "null", "null", "null", "null");
 
             for (int i = 0; dptos.Rows.Count > i; i++)
             {
                 comboBox2.Items.Add(dptos.Rows[i][1]);
             }
 
-            var query2 = "EXEC sp_GestionPuestos @Op = 'X'";
-
-            var puestos = db.ConsultaTabla(query2);
+            var puestos = db.gestionPuestos("X", "null", "null", "null", "null");
 
             for (int i = 0; puestos.Rows.Count > i; i++)
             {

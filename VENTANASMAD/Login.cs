@@ -25,9 +25,7 @@ namespace VENTANASMAD
 
             var db = new EnlaceDB();
 
-            string query = "EXEC sp_GestionEmpleados @Op = 'N', @NombreU = '" + textBox18.Text +  "', @Contraseña = '" + textBox12.Text + "';";
-
-            var usuario = db.ConsultaTabla(query);
+            var usuario = db.gestionEmpleados("N", "null", "null", "null", "null", textBox18.Text, textBox12.Text, "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null");
 
             if(usuario.Rows.Count == 0)
             {
@@ -35,6 +33,8 @@ namespace VENTANASMAD
             }
             else
             {
+                db.setSesion(usuario.Rows[0][0].ToString());
+
                 this.Hide();
                 Form1 f2 = new Form1();
                 f2.ShowDialog();
@@ -45,23 +45,18 @@ namespace VENTANASMAD
 
         private void button2_Click(object sender, EventArgs e)
         {
-
             var db = new EnlaceDB();
 
-            var query = "EXEC sp_GestionDepartamentos @Op = 'X'";
-
-            var dptos = db.ConsultaTabla(query);
+            var dptos = db.gestionDepartamentos("X", "null", "null", "null", "null");
 
             if (dptos.Rows.Count != 0)
             {
-                var query2 = "EXEC sp_GestionPuestos @Op = 'X'";
-
-                var puestos = db.ConsultaTabla(query2);
+                var puestos = db.gestionPuestos("X", "null", "null", "null", "null");
 
                 if (puestos.Rows.Count != 0)
                 {
-                    AÑADIREMPLEADO f3 = new AÑADIREMPLEADO();
-                    f3.ShowDialog();
+                    AÑADIREMPLEADO f5 = new AÑADIREMPLEADO();
+                    f5.ShowDialog();
                 }
                 else
                 {

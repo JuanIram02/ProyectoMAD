@@ -17,5 +17,22 @@ namespace VENTANASMAD
             InitializeComponent();
         }
 
+        private void Puesto_Load(object sender, EventArgs e)
+        {
+            var db = new EnlaceDB();
+
+            var puestos = db.gestionPuestos("V", "null", "null", "null", "null");
+            dataGridView1.DataSource = puestos;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var db = new EnlaceDB();
+
+            db.gestionPuestos("I", "null", textBox12.Text, textBox6.Text, "1");
+
+            textBox12.Clear();
+            textBox6.Clear();
+        }
     }
 }

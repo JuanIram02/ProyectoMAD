@@ -28,7 +28,6 @@ namespace VENTANASMAD
                 MessageBox.Show("Registre una empresa", "Aviso");
 
                 button1.Text = "Agregar";
-                dateTimePicker1.Text = "Seleccione Fecha";
 
             }
             else

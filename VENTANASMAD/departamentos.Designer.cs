@@ -135,6 +135,7 @@ namespace VENTANASMAD
             this.button3.TabIndex = 29;
             this.button3.Text = "Agregar";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label5
             // 
@@ -158,6 +159,11 @@ namespace VENTANASMAD
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(11, 240);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
@@ -202,6 +208,7 @@ namespace VENTANASMAD
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "departamentos";
             this.Text = "departamentos";
+            this.Load += new System.EventHandler(this.departamentos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

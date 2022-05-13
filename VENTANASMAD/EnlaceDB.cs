@@ -12,6 +12,9 @@ namespace VENTANASMAD
 {
     public class EnlaceDB
     {
+
+        static private string _Sesion;
+        static private string _Empleado;
         static private string _aux { set; get; }
         static private SqlConnection _conexion;
         static private SqlDataAdapter _adaptador = new SqlDataAdapter();
@@ -25,6 +28,15 @@ namespace VENTANASMAD
             {
                 return _tabla;
             }
+        }
+
+        public string getSesion()
+        {
+            return _Sesion;         
+        }
+        public void setSesion(string sesion)
+        {
+            _Sesion = sesion;
         }
 
         private static void conectar()
@@ -201,6 +213,102 @@ namespace VENTANASMAD
         {
 
             string qry = "EXEC sp_GestionDomicilios @Op = '" + Op + "', @IDDomicilio = " + IDDomicilio + ", @Calle = '" + Calle + "', @Numero = '" + Numero + "', @Apartamento = '" + Apartamento + "', @CodigoPostal = '" + CodigoPostal + "', @Ciudad = '" + Ciudad + "', @Pais = '" + Pais + "'";
+
+            DataTable tabla = new DataTable();
+
+            try
+            {
+                conectar();
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.Text;
+                _comandosql.CommandTimeout = 1200;
+
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
+
+            }
+            catch (SqlException e)
+            {
+                var msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            return tabla;
+        }
+
+        public DataTable gestionEmpleados(string Op, string NumeroEmpleado, string CURP, string NSS, string RFC, string NombreU, string Contraseña, string TipoUsuario, string Estatus, string Email, string Telefono, string Domicilio, string FechaNacimiento, string Nombres, string ApPaterno, string ApMaterno, string Departamento, string Puesto)
+        {
+           
+            string qry = "EXEC sp_GestionEmpleados @Op = '" + Op + "', @NumeroEmpleado = " + NumeroEmpleado + ", @CURP = '" + CURP + "', @NSS = '" + NSS + "', @RFC = '" + RFC + "', @NombreU = '" + NombreU + "', @Contraseña = '" + Contraseña + "', @TipoUsuario = " + TipoUsuario + ", @Estatus = " + Estatus + ", @Email = '" + Email + "', @Telefono = " + Telefono + ", @Domicilio = " + Domicilio + ", @FechaNacimiento = " + FechaNacimiento + ", @Nombres = '" + Nombres + "', @ApPaterno = '" + ApPaterno + "', @ApMaterno = '" + ApMaterno + "', @Departamento = " + Departamento + ", @Puesto = " + Puesto + "";
+
+            DataTable tabla = new DataTable();
+
+            try
+            {
+                conectar();
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.Text;
+                _comandosql.CommandTimeout = 1200;
+
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
+
+            }
+            catch (SqlException e)
+            {
+                var msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            return tabla;
+        }
+
+        public DataTable gestionDepartamentos(string Op, string IDDepartamento, string Nombre, string SueldoBase, string Estatus)
+        {
+
+            string qry = "EXEC sp_GestionDepartamentos @Op = '" + Op + "', @IDDepartamento = " + IDDepartamento + ", @Nombre = '" + Nombre + "', @SueldoBase = " + SueldoBase + ", @Estatus = " + Estatus + "";
+
+            DataTable tabla = new DataTable();
+
+            try
+            {
+                conectar();
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.Text;
+                _comandosql.CommandTimeout = 1200;
+
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
+
+            }
+            catch (SqlException e)
+            {
+                var msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            return tabla;
+        }
+
+        public DataTable gestionPuestos(string Op, string IDPuesto, string Nombre, string NivelSalarial, string Estatus)
+        {
+
+            string qry = "EXEC sp_GestionPuestos @Op = '" + Op + "', @IDPuesto = " + IDPuesto + ", @Nombre = '" + Nombre + "', @NivelSalarial = " + NivelSalarial + ", @Estatus = " + Estatus + "";
 
             DataTable tabla = new DataTable();
 
