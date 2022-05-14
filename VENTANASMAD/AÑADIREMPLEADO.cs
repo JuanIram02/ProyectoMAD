@@ -84,6 +84,8 @@ namespace VENTANASMAD
 
             db.gestionEmpleados("I", "null", textBox12.Text, textBox5.Text, textBox6.Text, textBox19.Text, textBox13.Text, tipoU, "1", textBox14.Text, telefonos.ToString(), domicilio.ToString(), fechaN, textBox18.Text, textBox17.Text, textBox16.Text, departamento.ToString(), puesto.ToString());
 
+            MessageBox.Show("Empleado registrado exitosamente", "Aviso");
+
             this.Close();
         }
 

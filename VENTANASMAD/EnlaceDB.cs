@@ -143,6 +143,70 @@ namespace VENTANASMAD
 
             return tabla;
         }
+        
+        public DataTable gestionListaD(string Op, string IDListaD, string Empleado, string Deduccion, string Fecha, string Cantidad, string Nomina)
+        {
+
+            string qry = "EXEC sp_GestionListaDeducciones @Op = '" + Op + "', @IDListaD = " + IDListaD + ", @Empleado = " + Empleado + "', @Deduccion = " + Deduccion + ", @Fecha = " + Fecha + ", @Cantidad = " + Cantidad + ", @Nomina = " + Nomina + "";
+
+            DataTable tabla = new DataTable();
+
+            try
+            {
+                conectar();
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.Text;
+                _comandosql.CommandTimeout = 1200;
+
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
+
+            }
+            catch (SqlException e)
+            {
+                var msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            return tabla;
+        }
+        
+        public DataTable gestionListaP(string Op, string IDListaP, string Empleado, string Percepcion, string Fecha, string Cantidad, string Nomina)
+        {
+
+            string qry = "EXEC sp_GestionListaDeducciones @Op = '" + Op + "', @IDListaP = " + IDListaP + ", @Empleado = " + Empleado + "', @Percepcion = " + Percepcion + ", @Fecha = " + Fecha + ", @Cantidad = " + Cantidad + ", @Nomina = " + Nomina + "";
+
+            DataTable tabla = new DataTable();
+
+            try
+            {
+                conectar();
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.Text;
+                _comandosql.CommandTimeout = 1200;
+
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
+
+            }
+            catch (SqlException e)
+            {
+                var msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            return tabla;
+        }
 
         public DataTable gestionEmpresa(string Op, string RFC, string RazonSocial, string RegistroPatronal, string Fecha_Inicio, string Domicilio, string Telefono)
         {
@@ -175,7 +239,7 @@ namespace VENTANASMAD
 
             return tabla;
         }
-
+        
         public DataTable gestionTelefonos(string Op, string IDTelefonos, string Telefono1, string Telefono2, string Telefono3)
         {
 
@@ -308,6 +372,38 @@ namespace VENTANASMAD
         {
 
             string qry = "EXEC sp_GestionPuestos @Op = '" + Op + "', @IDPuesto = " + IDPuesto + ", @Nombre = '" + Nombre + "', @NivelSalarial = " + NivelSalarial + ", @Estatus = " + Estatus + "";
+
+            DataTable tabla = new DataTable();
+
+            try
+            {
+                conectar();
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.Text;
+                _comandosql.CommandTimeout = 1200;
+
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
+
+            }
+            catch (SqlException e)
+            {
+                var msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            return tabla;
+        }
+
+        public DataTable gestionNominas(string Op, string IDNomina, string FolioFiscal, string Empleado, string Departamento, string Puesto, string RFCempresa, string Fecha, string SueldoBruto, string SueldoNeto)
+        {
+
+            string qry = "EXEC sp_GestionPuestos @Op = '" + Op + "', @IDNomina = " + IDNomina + ", @FolioFiscal = '" + FolioFiscal + "', @Empleado = " + Empleado + ", @Departamento = " + Departamento + ", @Puesto = " + Puesto + ", @RFCempresa = '" + RFCempresa + "', @Fecha = " + Fecha + ", @SueldoBruto = " + SueldoBruto + ", @SueldoNeto = " + SueldoNeto + "";
 
             DataTable tabla = new DataTable();
 

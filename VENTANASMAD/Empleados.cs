@@ -54,22 +54,55 @@ namespace VENTANASMAD
             }
             else
             {
-                var empleado = dataGridView1.CurrentCell.Value.ToString();
+                var p = db.gestionPercepciones("T", "null", "null", "null", "null");
 
-                db.setEmpleado(empleado);
+                if(p.Rows.Count == 0)
+                {
+                    MessageBox.Show("Antes registre una percepcion", "Aviso");
+                }
+                else
+                {
+                    var empleado = dataGridView1.CurrentCell.Value.ToString();
 
-                this.Hide();
-                AgregarPercepcion f3 = new AgregarPercepcion();
-                f3.ShowDialog();
+                    db.setEmpleado(empleado);
+
+                    this.Hide();
+                    AgregarPercepcion f3 = new AgregarPercepcion();
+                    f3.ShowDialog();
+                }     
             }
 
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AgregarDeduccion f3 = new AgregarDeduccion();
-            f3.ShowDialog();
+            var db = new EnlaceDB();
+
+            var sl = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+
+            if (sl == 0)
+            {
+                MessageBox.Show("Seleccione un empleado", "Aviso");
+            }
+            else
+            {
+                var d = db.gestionDeducciones("T", "null", "null", "null", "null");
+
+                if (d.Rows.Count == 0)
+                {
+                    MessageBox.Show("Antes registre una deduccion", "Aviso");
+                }
+                else
+                {
+                    var empleado = dataGridView1.CurrentCell.Value.ToString();
+
+                    db.setEmpleado(empleado);
+
+                    this.Hide();
+                    AgregarDeduccion f3 = new AgregarDeduccion();
+                    f3.ShowDialog();
+                }
+            }         
         }
 
         private void button4_Click(object sender, EventArgs e)

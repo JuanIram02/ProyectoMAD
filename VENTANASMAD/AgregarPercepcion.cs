@@ -19,8 +19,63 @@ namespace VENTANASMAD
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form1 f7 = new Form1();
-            f7.ShowDialog();
+
+            {
+                var db = new EnlaceDB();
+
+                var sl = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+                var cantidad = "";
+
+                if (sl == 0)
+                {
+                    MessageBox.Show("Seleccione una percepcion", "Aviso");
+                }
+                else
+                {
+                    string mes;
+                    if (dateTimePicker1.Value.Month < 10)
+                    {
+                        mes = "0" + dateTimePicker1.Value.Month.ToString();
+                    }
+                    else
+                    {
+                        mes = dateTimePicker1.Value.Month.ToString();
+                    }
+
+                    string dia;
+                    if (dateTimePicker1.Value.Day < 10)
+                    {
+                        dia = "0" + dateTimePicker1.Value.Day.ToString();
+                    }
+                    else
+                    {
+                        dia = dateTimePicker1.Value.Day.ToString();
+                    }
+
+                    string fecha = "'" + dateTimePicker1.Value.Year.ToString() + mes + dia + "'";
+
+                    var percepcion = dataGridView1.CurrentCell.Value.ToString();
+
+                    var p = db.gestionPercepciones("S", percepcion, "null", "null", "null");
+
+                    if (p.Rows[0][1].ToString() == "")
+                    {
+                        cantidad = p.Rows[0][2].ToString();
+                    }
+                    if (p.Rows[0][2].ToString() == "")
+                    {
+                        cantidad = "." + p.Rows[0][1].ToString();
+                    }
+
+                    db.gestionListaP("I", "null", db.getEmpleado(), percepcion, fecha, cantidad, "null");
+
+                    MessageBox.Show("Percepcion asignada correctamente", "Aviso");
+
+                    this.Hide();
+                }
+
+
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
