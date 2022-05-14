@@ -144,10 +144,10 @@ namespace VENTANASMAD
             return tabla;
         }
         
-        public DataTable gestionListaD(string Op, string IDListaD, string Empleado, string Deduccion, string Fecha, string Cantidad, string Nomina)
+        public DataTable gestionListaD(string Op, string IDListaD, string Empleado, string Deduccion, string Fecha, string FechaAux, string Cantidad, string Nomina)
         {
 
-            string qry = "EXEC sp_GestionListaDeducciones @Op = '" + Op + "', @IDListaD = " + IDListaD + ", @Empleado = " + Empleado + "', @Deduccion = " + Deduccion + ", @Fecha = " + Fecha + ", @Cantidad = " + Cantidad + ", @Nomina = " + Nomina + "";
+            string qry = "EXEC sp_GestionListaDeducciones @Op = '" + Op + "', @IDListaD = " + IDListaD + ", @Empleado = " + Empleado + ", @Deduccion = " + Deduccion + ", @Fecha = " + Fecha + ", @FechaAux = " + FechaAux + ", @Cantidad = " + Cantidad + ", @Nomina = " + Nomina + "";
 
             DataTable tabla = new DataTable();
 
@@ -176,10 +176,10 @@ namespace VENTANASMAD
             return tabla;
         }
         
-        public DataTable gestionListaP(string Op, string IDListaP, string Empleado, string Percepcion, string Fecha, string Cantidad, string Nomina)
+        public DataTable gestionListaP(string Op, string IDListaP, string Empleado, string Percepcion, string Fecha, string FechaAux, string Cantidad, string Nomina)
         {
 
-            string qry = "EXEC sp_GestionListaDeducciones @Op = '" + Op + "', @IDListaP = " + IDListaP + ", @Empleado = " + Empleado + "', @Percepcion = " + Percepcion + ", @Fecha = " + Fecha + ", @Cantidad = " + Cantidad + ", @Nomina = " + Nomina + "";
+            string qry = "EXEC sp_GestionListaPercepciones @Op = '" + Op + "', @IDListaP = " + IDListaP + ", @Empleado = " + Empleado + ", @Percepcion = " + Percepcion + ", @Fecha = " + Fecha + ", @FechaAux = " + FechaAux + ", @Cantidad = " + Cantidad + ", @Nomina = " + Nomina + "";
 
             DataTable tabla = new DataTable();
 

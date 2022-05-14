@@ -50,23 +50,92 @@ namespace VENTANASMAD
 
                 int monthDays = DateTime.DaysInMonth(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month);
 
-                string fecha = "'" + dateTimePicker1.Value.Year.ToString() + mes + dia + "'";
+                string numDias;
+                if (monthDays < 10)
+                {
+                    numDias = "0" + monthDays.ToString();
+                }
+                else
+                {
+                    numDias = monthDays.ToString();
+                }
+
+
+                string fechaNomina = "'" + dateTimePicker1.Value.Year.ToString() + mes + dia + "'";
+                string fecha = "'" + dateTimePicker1.Value.Year.ToString() + mes + "01'";
+                string fechaAux = "'" + dateTimePicker1.Value.Year.ToString() + mes + numDias + "'";
 
                 string RFCEmpresa = empresa.Rows[0][0].ToString();
 
-                var nominados = db.gestionEmpleados("G", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", fecha, "null", "null", "null", "null", "null");
+                var nominados = db.gestionEmpleados("G", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", fechaNomina, "null", "null", "null", "null", "null");
 
                 for (int i = 0; i < nominados.Rows.Count; i++)
-                {
-                    int s = Int32.Parse(db.gestionDepartamentos("S", nominados.Rows[i][16].ToString(), "null", "null", "null").Rows[0][2].ToString());
-                    int n = Int32.Parse(db.gestionPuestos("S", nominados.Rows[i][17].ToString(), "null", "null", "null").Rows[0][2].ToString());
+                {                  
+                    float NivelSalarial = float.Parse(db.gestionDepartamentos("S", nominados.Rows[i][16].ToString(), "null", "null", "null").Rows[0][2].ToString());
+                    float SueldoBase = float.Parse(db.gestionPuestos("S", nominados.Rows[i][17].ToString(), "null", "null", "null").Rows[0][2].ToString());
 
-                    float NivelSalarial = n;
-                    float SueldoBase = s;
+                    float sueldoBruto = monthDays * SueldoBase * NivelSalarial / 100;
 
-                    float sueldoBruto = (monthDays * SueldoBase * NivelSalarial / 100);                    
+                    var deducciones = db.gestionListaD("F", "null", nominados.Rows[i][0].ToString(), "null", fecha, fechaAux, "null", "null");
+                    var percepciones = db.gestionListaP("F", "null", nominados.Rows[i][0].ToString(), "null", fecha, fechaAux, "null", "null");
 
-                    db.gestionNominas("I", "null", "abril", nominados.Rows[i][0].ToString(), nominados.Rows[i][16].ToString(), nominados.Rows[i][17].ToString(), RFCEmpresa, fecha, sueldoBruto.ToString(), "null");
+                    float sumatoria = 0;
+
+                    for(int y = 0; y < deducciones.Rows.Count; y++)
+                    {
+                        string p = deducciones.Rows[i][4].ToString();
+
+                        if (p.StartsWith("."))
+                        {
+                            
+                            float porcentaje = float.Parse(p);
+
+                            sumatoria = sumatoria - (sueldoBruto * porcentaje);
+
+                        }
+                        else
+                        {
+                            float cantidad = float.Parse(p);
+
+                            sumatoria = sumatoria - cantidad;
+                        }                     
+                    }
+
+                    for (int y = 0; y < percepciones.Rows.Count; y++)
+                    {
+                        string p = percepciones.Rows[i][4].ToString();
+
+                        if (p.StartsWith("."))
+                        {
+
+                            float porcentaje = float.Parse(p);
+
+                            sumatoria = sumatoria + (sueldoBruto * porcentaje);
+
+                        }
+                        else
+                        {
+                            float cantidad = float.Parse(p);
+
+                            sumatoria = sumatoria + cantidad;
+                        }
+                    }
+
+                    float sueldoNeto = sueldoBruto + sumatoria;
+
+                    db.gestionNominas("I", "null", "abril", nominados.Rows[i][0].ToString(), nominados.Rows[i][16].ToString(), nominados.Rows[i][17].ToString(), RFCEmpresa, fechaNomina, sueldoBruto.ToString(), "null");
+
+                    var nomina = db.gestionNominas("M", "null", "null", "null", "null", "null", "null", "null", "null", "null").Rows[0][0].ToString();
+
+                    for (int y = 0; y < deducciones.Rows.Count; y++)
+                    {
+                        db.gestionListaD("U", deducciones.Rows[y][0].ToString(), "null", "null", "null", "null", "null", nomina);
+                    }
+
+                    for (int y = 0; y < percepciones.Rows.Count; y++)
+                    {
+                        db.gestionListaD("U", deducciones.Rows[y][0].ToString(), "null", "null", "null", "null", "null", nomina);
+                    }
                 }
             }
         }

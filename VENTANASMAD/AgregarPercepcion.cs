@@ -67,7 +67,7 @@ namespace VENTANASMAD
                         cantidad = "." + p.Rows[0][1].ToString();
                     }
 
-                    db.gestionListaP("I", "null", db.getEmpleado(), percepcion, fecha, cantidad, "null");
+                    db.gestionListaP("I", "null", db.getEmpleado(), percepcion, fecha, "null", cantidad, "null");
 
                     MessageBox.Show("Percepcion asignada correctamente", "Aviso");
 

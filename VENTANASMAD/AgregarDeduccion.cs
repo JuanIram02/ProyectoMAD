@@ -65,7 +65,7 @@ namespace VENTANASMAD
                     cantidad = "." + d.Rows[0][1].ToString();
                 }
 
-                db.gestionListaD("I", "null", db.getEmpleado(), deduccion, fecha, cantidad, "null");
+                db.gestionListaD("I", "null", db.getEmpleado(), deduccion, fecha, "null", cantidad, "null");
 
                 MessageBox.Show("Deduccion asignada correctamente", "Aviso");
 
