@@ -85,7 +85,7 @@ namespace VENTANASMAD
                     {
                         string p = deducciones.Rows[i][4].ToString();
 
-                        if (p.StartsWith("."))
+                        if (p.StartsWith("0."))
                         {
                             
                             float porcentaje = float.Parse(p);
@@ -123,10 +123,11 @@ namespace VENTANASMAD
 
                     float sueldoNeto = sueldoBruto + sumatoria;
 
-                    db.gestionNominas("I", "null", "abril", nominados.Rows[i][0].ToString(), nominados.Rows[i][16].ToString(), nominados.Rows[i][17].ToString(), RFCEmpresa, fechaNomina, sueldoBruto.ToString(), "null");
+                    db.gestionNominas("I", "null", "abril", nominados.Rows[i][0].ToString(), nominados.Rows[i][16].ToString(), nominados.Rows[i][17].ToString(), RFCEmpresa, fechaNomina, sueldoBruto.ToString(), sueldoNeto.ToString());
 
+                    /*          TRIGGER INSERT NOMINA                           
                     var nomina = db.gestionNominas("M", "null", "null", "null", "null", "null", "null", "null", "null", "null").Rows[0][0].ToString();
-
+                             
                     for (int y = 0; y < deducciones.Rows.Count; y++)
                     {
                         db.gestionListaD("U", deducciones.Rows[y][0].ToString(), "null", "null", "null", "null", "null", nomina);
@@ -136,6 +137,7 @@ namespace VENTANASMAD
                     {
                         db.gestionListaD("U", deducciones.Rows[y][0].ToString(), "null", "null", "null", "null", "null", nomina);
                     }
+                    */
                 }
             }
         }

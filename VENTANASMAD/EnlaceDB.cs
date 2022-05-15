@@ -403,7 +403,7 @@ namespace VENTANASMAD
         public DataTable gestionNominas(string Op, string IDNomina, string FolioFiscal, string Empleado, string Departamento, string Puesto, string RFCempresa, string Fecha, string SueldoBruto, string SueldoNeto)
         {
 
-            string qry = "EXEC sp_GestionPuestos @Op = '" + Op + "', @IDNomina = " + IDNomina + ", @FolioFiscal = '" + FolioFiscal + "', @Empleado = " + Empleado + ", @Departamento = " + Departamento + ", @Puesto = " + Puesto + ", @RFCempresa = '" + RFCempresa + "', @Fecha = " + Fecha + ", @SueldoBruto = " + SueldoBruto + ", @SueldoNeto = " + SueldoNeto + "";
+            string qry = "EXEC sp_GestionNominas @Op = '" + Op + "', @IDNomina = " + IDNomina + ", @FolioFiscal = '" + FolioFiscal + "', @Empleado = " + Empleado + ", @Departamento = " + Departamento + ", @Puesto = " + Puesto + ", @RFCempresa = '" + RFCempresa + "', @Fecha = " + Fecha + ", @SueldoBruto = " + SueldoBruto + ", @SueldoNeto = " + SueldoNeto + "";
 
             DataTable tabla = new DataTable();
 
