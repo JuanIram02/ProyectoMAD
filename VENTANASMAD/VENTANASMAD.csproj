@@ -50,128 +50,128 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgregarDeduccion.cs">
+    <Compile Include="Ventanas\AgregarDeduccion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarDeduccion.Designer.cs">
+    <Compile Include="Ventanas\AgregarDeduccion.Designer.cs">
       <DependentUpon>AgregarDeduccion.cs</DependentUpon>
     </Compile>
-    <Compile Include="AgregarPercepcion.cs">
+    <Compile Include="Ventanas\AgregarPercepcion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarPercepcion.Designer.cs">
+    <Compile Include="Ventanas\AgregarPercepcion.Designer.cs">
       <DependentUpon>AgregarPercepcion.cs</DependentUpon>
     </Compile>
-    <Compile Include="AÑADIREMPLEADO.cs">
+    <Compile Include="Ventanas\AÑADIREMPLEADO.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AÑADIREMPLEADO.Designer.cs">
+    <Compile Include="Ventanas\AÑADIREMPLEADO.Designer.cs">
       <DependentUpon>AÑADIREMPLEADO.cs</DependentUpon>
     </Compile>
-    <Compile Include="Deducciones.cs">
+    <Compile Include="Ventanas\Deducciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Deducciones.Designer.cs">
+    <Compile Include="Ventanas\Deducciones.Designer.cs">
       <DependentUpon>Deducciones.cs</DependentUpon>
     </Compile>
     <Compile Include="EnlaceDB.cs" />
     <Compile Include="PDF.cs" />
-    <Compile Include="Percepciones.cs">
+    <Compile Include="Ventanas\Percepciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Percepciones.Designer.cs">
+    <Compile Include="Ventanas\Percepciones.Designer.cs">
       <DependentUpon>Percepciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="Puesto.cs">
+    <Compile Include="Ventanas\Puesto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Puesto.Designer.cs">
+    <Compile Include="Ventanas\Puesto.Designer.cs">
       <DependentUpon>Puesto.cs</DependentUpon>
     </Compile>
-    <Compile Include="departamentos.cs">
+    <Compile Include="Ventanas\departamentos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="departamentos.Designer.cs">
+    <Compile Include="Ventanas\departamentos.Designer.cs">
       <DependentUpon>departamentos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Empleados.cs">
+    <Compile Include="Ventanas\Empleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Empleados.Designer.cs">
+    <Compile Include="Ventanas\Empleados.Designer.cs">
       <DependentUpon>Empleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="empresa.cs">
+    <Compile Include="Ventanas\empresa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="empresa.Designer.cs">
+    <Compile Include="Ventanas\empresa.Designer.cs">
       <DependentUpon>empresa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Ventanas\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Ventanas\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inicio.cs">
+    <Compile Include="Ventanas\Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inicio.Designer.cs">
+    <Compile Include="Ventanas\Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nomina.cs">
+    <Compile Include="Ventanas\Nomina.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nomina.Designer.cs">
+    <Compile Include="Ventanas\Nomina.Designer.cs">
       <DependentUpon>Nomina.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Login.cs">
+    <Compile Include="Ventanas\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Ventanas\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes.cs">
+    <Compile Include="Ventanas\Reportes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes.Designer.cs">
+    <Compile Include="Ventanas\Reportes.Designer.cs">
       <DependentUpon>Reportes.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AgregarDeduccion.resx">
+    <EmbeddedResource Include="Ventanas\AgregarDeduccion.resx">
       <DependentUpon>AgregarDeduccion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AgregarPercepcion.resx">
+    <EmbeddedResource Include="Ventanas\AgregarPercepcion.resx">
       <DependentUpon>AgregarPercepcion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AÑADIREMPLEADO.resx">
+    <EmbeddedResource Include="Ventanas\AÑADIREMPLEADO.resx">
       <DependentUpon>AÑADIREMPLEADO.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Deducciones.resx">
+    <EmbeddedResource Include="Ventanas\Deducciones.resx">
       <DependentUpon>Deducciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Percepciones.resx">
+    <EmbeddedResource Include="Ventanas\Percepciones.resx">
       <DependentUpon>Percepciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Puesto.resx">
+    <EmbeddedResource Include="Ventanas\Puesto.resx">
       <DependentUpon>Puesto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="departamentos.resx">
+    <EmbeddedResource Include="Ventanas\departamentos.resx">
       <DependentUpon>departamentos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Empleados.resx">
+    <EmbeddedResource Include="Ventanas\Empleados.resx">
       <DependentUpon>Empleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="empresa.resx">
+    <EmbeddedResource Include="Ventanas\empresa.resx">
       <DependentUpon>empresa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Ventanas\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inicio.resx">
+    <EmbeddedResource Include="Ventanas\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nomina.resx">
+    <EmbeddedResource Include="Ventanas\Nomina.resx">
       <DependentUpon>Nomina.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -184,10 +184,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Ventanas\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes.resx">
+    <EmbeddedResource Include="Ventanas\Reportes.resx">
       <DependentUpon>Reportes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
