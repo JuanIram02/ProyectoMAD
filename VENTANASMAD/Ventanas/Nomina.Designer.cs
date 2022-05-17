@@ -127,6 +127,7 @@ namespace VENTANASMAD
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(9, 215);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
@@ -170,6 +171,7 @@ namespace VENTANASMAD
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Nomina";
             this.Text = "Nomina";
+            this.Load += new System.EventHandler(this.Nomina_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
