@@ -141,5 +141,13 @@ namespace VENTANASMAD
                 }
             }
         }
+
+        private void Nomina_Load(object sender, EventArgs e)
+        {
+            var db = new EnlaceDB();
+
+            var nominas = db.gestionNominas("V", "null", "null", "null", "null", "null", "null", "null", "null", "null");
+            dataGridView1.DataSource = nominas;
+        }
     }
 }
