@@ -22,6 +22,7 @@ namespace VENTANASMAD
 
         private void button1_Click(object sender, EventArgs e)
         {
+    
 
             var db = new EnlaceDB();
 
@@ -68,6 +69,13 @@ namespace VENTANASMAD
                 MessageBox.Show("Antes registe un Departamento", "Aviso");
             }
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            var PDF = new PDF();
+            string ola = "ola";
+            PDF.generaPDF(ola);
         }
     }
 }
