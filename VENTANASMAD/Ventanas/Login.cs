@@ -76,6 +76,7 @@ namespace VENTANASMAD
             var PDF = new PDF();
             string ola = "ola";
             PDF.generaPDF(ola);
+
         }
     }
 }
