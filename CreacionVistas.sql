@@ -90,18 +90,11 @@ Go
 --Reporte general de Nomina
 
 IF OBJECT_ID('vw_ReporteNomina') IS NOT NULL
-   DROP VIEW vw_Nominas
+   DROP VIEW vw_ReporteNomina
 
 Go
 
-CREATE VIEW vw_Nominas AS 
-	SELECT N.IDNomina as ID, N.Fecha, CAST(E.Nombres + ' ' + E.ApPaterno + ' ' + E.ApMaterno as varchar) as Nombre, D.Nombre as Departamento, P.Nombre as Puesto, N.FolioFiscal as 'Folio fiscal', CONVERT(VARCHAR,CAST(N.SueldoNeto AS MONEY),1) as 'Sueldo'
-		FROM Nominas N
-			INNER JOIN Empleados E
-			ON N.Empleado = E.NumeroEmpleado
-			INNER JOIN Departamentos D
-			ON N.Departamento = D.IDDepartamento
-			INNER JOIN Puestos P 
-			ON N.Puesto = P.IDPuesto
+CREATE VIEW vw_ReporteNomina AS 
+	SELECT 'hola' as Saludo
 
 Go
