@@ -40,7 +40,6 @@ namespace VENTANASMAD
 
         private static void conectar()
         {
-            //string cnn = ConfigurationManager.AppSettings["desarrollo1"];
             string cnn = ConfigurationManager.ConnectionStrings["SQL_Auth2"].ToString();
             _conexion = new SqlConnection(cnn);
             _conexion.Open();

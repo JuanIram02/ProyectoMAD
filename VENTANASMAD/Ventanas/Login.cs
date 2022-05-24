@@ -21,9 +21,7 @@ namespace VENTANASMAD
 
 
         private void button1_Click(object sender, EventArgs e)
-        {
-    
-
+        {    
             var db = new EnlaceDB();
 
             var usuario = db.gestionEmpleados("N", "null", "null", "null", "null", textBox18.Text, textBox12.Text, "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null");

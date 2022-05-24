@@ -55,9 +55,6 @@ namespace VENTANASMAD
                     txtFive.TextState.Font = FontRepository.FindFont("Arial");
                     txtFive.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
 
-
-
-
                     TextBuilder txtBuild = new TextBuilder(page1);
                     txtBuild.AppendText(txtOne);
                     txtBuild.AppendText(txtTwo);
