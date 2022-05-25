@@ -33,6 +33,9 @@ namespace VENTANASMAD
 
             textBox1.Clear();
             numericUpDown1.Value = 0;
+
+            var departamentos = db.gestionDepartamentos("V", "null", "null", "null", "null");
+            dataGridView1.DataSource = departamentos;
         }
     }
 }

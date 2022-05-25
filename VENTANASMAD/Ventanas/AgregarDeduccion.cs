@@ -52,7 +52,7 @@ namespace VENTANASMAD
 
                 string fecha = "'" + dateTimePicker1.Value.Year.ToString() + mes + dia + "'";
 
-                var deduccion = dataGridView1.CurrentCell.Value.ToString();
+                var deduccion = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
 
                 var d = db.gestionDeducciones("S", deduccion, "null", "null", "null");
 

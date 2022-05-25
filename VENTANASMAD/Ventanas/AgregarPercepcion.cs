@@ -54,7 +54,7 @@ namespace VENTANASMAD
 
                     string fecha = "'" + dateTimePicker1.Value.Year.ToString() + mes + dia + "'";
 
-                    var percepcion = dataGridView1.CurrentCell.Value.ToString();
+                    var percepcion = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
 
                     var p = db.gestionPercepciones("S", percepcion, "null", "null", "null");
 

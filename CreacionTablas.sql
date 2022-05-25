@@ -1,3 +1,9 @@
+USE master;
+DROP DATABASE DB_MAD;
+
+CREATE DATABASE DB_MAD;
+USE DB_MAD;
+
 IF OBJECT_ID('Domicilios') IS NOT NULL
    DROP TABLE Domicilios
 
@@ -37,7 +43,8 @@ RazonSocial				VARCHAR(30) NOT NULL,
 RegistroPatronal	    VARCHAR(30) NOT NULL,
 Fecha_Inicio			DATE NOT NULL,
 Domicilio				INT NOT NULL,
-Telefono				INT NOT NULL, 
+Telefono				INT NOT NULL,
+Email					VARCHAR(30) NOT NULL, 
 
 CONSTRAINT PK_Empresa
 	Primary Key(RFC),

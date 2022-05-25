@@ -33,6 +33,9 @@ namespace VENTANASMAD
 
             textBox12.Clear();
             textBox6.Clear();
+
+            var puestos = db.gestionPuestos("V", "null", "null", "null", "null");
+            dataGridView1.DataSource = puestos;
         }
     }
 }

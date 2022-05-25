@@ -21,7 +21,7 @@ namespace VENTANASMAD
         {
             var db = new EnlaceDB();
 
-            var empresa = db.gestionEmpresa("T", "null", "null", "null", "null", "null", "null");
+            var empresa = db.gestionEmpresa("T", "null", "null", "null", "null", "null", "null", "null");
 
             if(empresa.Rows.Count == 0)
             {
@@ -39,6 +39,8 @@ namespace VENTANASMAD
                 textBox3.Text = empresa.Rows[0][0].ToString();
                 dateTimePicker1.Text = empresa.Rows[0][3].ToString();
                 textBox4.Text = d.Rows[0][1].ToString();
+                textBox5.Text = empresa.Rows[0][6].ToString();
+                textBox6.Text = t.Rows[0][1].ToString();
                 textBox7.Text = d.Rows[0][2].ToString();
                 textBox8.Text = d.Rows[0][3].ToString();
                 textBox9.Text = d.Rows[0][5].ToString();
@@ -87,12 +89,12 @@ namespace VENTANASMAD
 
             if(button1.Text == "Agregar")
             {
-                db.gestionEmpresa("I", textBox3.Text, textBox1.Text, textBox2.Text, fechaI, domicilio.ToString(), telefonos.ToString());
+                db.gestionEmpresa("I", textBox3.Text, textBox1.Text, textBox2.Text, fechaI, domicilio.ToString(), telefonos.ToString(), textBox5.Text);
                 MessageBox.Show("Empresa registrada exitosamente", "Aviso");
             }
             else
             {
-                db.gestionEmpresa("U", textBox3.Text, textBox1.Text, textBox2.Text, fechaI, domicilio.ToString(), telefonos.ToString());
+                db.gestionEmpresa("U", textBox3.Text, textBox1.Text, textBox2.Text, fechaI, domicilio.ToString(), telefonos.ToString(), textBox5.Text);
                 MessageBox.Show("Empresa editada exitosamente", "Aviso");
             }
 

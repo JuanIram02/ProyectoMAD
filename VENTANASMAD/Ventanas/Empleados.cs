@@ -62,7 +62,7 @@ namespace VENTANASMAD
                 }
                 else
                 {
-                    var empleado = dataGridView1.CurrentCell.Value.ToString();
+                    var empleado = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
 
                     db.setEmpleado(empleado);
 
@@ -94,7 +94,7 @@ namespace VENTANASMAD
                 }
                 else
                 {
-                    var empleado = dataGridView1.CurrentCell.Value.ToString();
+                    var empleado = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
 
                     db.setEmpleado(empleado);
 

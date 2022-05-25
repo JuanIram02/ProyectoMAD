@@ -63,5 +63,11 @@ BEGIN
 			FROM ListaPercepciones WHERE Empleado LIKE @Empleado AND Fecha >= @Fecha AND Fecha <= @FechaAux
    END
 
+   IF @Op = 'N'
+   BEGIN
+		SELECT IDListaP, Empleado, Percepcion, Fecha, Cantidad
+			FROM ListaPercepciones WHERE Nomina Like @Nomina
+   END
+
 END;
 Go

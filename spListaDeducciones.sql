@@ -63,5 +63,11 @@ BEGIN
 			FROM ListaDeducciones WHERE Empleado LIKE @Empleado AND Fecha >= @Fecha AND Fecha <= @FechaAux
    END
 
+   IF @Op = 'N'
+   BEGIN
+		SELECT IDListaD, Empleado, Deduccion, Fecha, Cantidad
+			FROM ListaDeducciones WHERE Nomina Like @Nomina
+   END
+
 END;
 Go

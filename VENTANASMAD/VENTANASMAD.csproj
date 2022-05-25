@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Convertidor.cs" />
     <Compile Include="Ventanas\AgregarDeduccion.cs">
       <SubType>Form</SubType>
     </Compile>

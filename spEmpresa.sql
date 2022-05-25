@@ -13,17 +13,18 @@ CREATE PROCEDURE sp_GestionEmpresa
 	@RFC						VARCHAR(16) = NULL,
 	@RazonSocial				VARCHAR(30) = NULL, 
 	@RegistroPatronal			VARCHAR(30) = NULL, 
-	@Fecha_Inicio				date = NULL,
+	@Fecha_Inicio				DATE = NULL,
 	@Domicilio					INT = NULL,
-	@Telefono					INT = NULL
+	@Telefono					INT = NULL,
+	@Email						VARCHAR(30)
 )
 AS
 BEGIN
 
    IF @Op = 'I' --insert
    Begin
-   INSERT INTO Empresa(RFC, RazonSocial, RegistroPatronal, Fecha_Inicio, Domicilio, Telefono)
-               VALUES(@RFC, @RazonSocial, @RegistroPatronal, @Fecha_Inicio, @Domicilio, @Telefono);
+   INSERT INTO Empresa(RFC, RazonSocial, RegistroPatronal, Fecha_Inicio, Domicilio, Telefono, Email)
+               VALUES(@RFC, @RazonSocial, @RegistroPatronal, @Fecha_Inicio, @Domicilio, @Telefono, @Email);
    END
 
    IF @Op = 'U' --update
@@ -34,7 +35,8 @@ BEGIN
 			   RegistroPatronal = ISNULL(@RegistroPatronal, RegistroPatronal),
 			   Fecha_Inicio = ISNULL(@Fecha_Inicio, Fecha_Inicio),
 			   Domicilio = ISNULL(@Domicilio, Domicilio),
-			   Telefono = ISNULL(@Telefono, Telefono)
+			   Telefono = ISNULL(@Telefono, Telefono),
+			   Email = ISNULL(@Email, Email)
 		 WHERE RFC = @RFC;
    END
 
@@ -45,7 +47,7 @@ BEGIN
 
    IF @Op = 'T' --select 
    BEGIN
-       SELECT RFC, RazonSocial, RegistroPatronal, Fecha_Inicio, Domicilio, Telefono
+       SELECT RFC, RazonSocial, RegistroPatronal, Fecha_Inicio, Domicilio, Telefono, Email
 			FROM Empresa 
    END
 

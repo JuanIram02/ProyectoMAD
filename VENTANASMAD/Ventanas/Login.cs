@@ -69,12 +69,5 @@ namespace VENTANASMAD
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            var PDF = new PDF();
-            string ola = "ola";
-            PDF.generaPDF(ola);
-
-        }
     }
 }

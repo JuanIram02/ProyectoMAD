@@ -40,7 +40,7 @@ namespace VENTANASMAD
 
         private static void conectar()
         {
-            string cnn = ConfigurationManager.ConnectionStrings["SQL_Auth2"].ToString();
+            string cnn = ConfigurationManager.ConnectionStrings["SQL_Auth"].ToString();
             _conexion = new SqlConnection(cnn);
             _conexion.Open();
         }
@@ -207,10 +207,10 @@ namespace VENTANASMAD
             return tabla;
         }
 
-        public DataTable gestionEmpresa(string Op, string RFC, string RazonSocial, string RegistroPatronal, string Fecha_Inicio, string Domicilio, string Telefono)
+        public DataTable gestionEmpresa(string Op, string RFC, string RazonSocial, string RegistroPatronal, string Fecha_Inicio, string Domicilio, string Telefono, string Email)
         {
 
-            string qry = "EXEC sp_GestionEmpresa @Op = '" + Op + "', @RFC = '" + RFC + "', @RazonSocial = '" + RazonSocial + "', @RegistroPatronal = '" + RegistroPatronal + "', @Fecha_Inicio = " + Fecha_Inicio + ", @Domicilio = " + Domicilio + ", @Telefono = " + Telefono + "";
+            string qry = "EXEC sp_GestionEmpresa @Op = '" + Op + "', @RFC = '" + RFC + "', @RazonSocial = '" + RazonSocial + "', @RegistroPatronal = '" + RegistroPatronal + "', @Fecha_Inicio = " + Fecha_Inicio + ", @Domicilio = " + Domicilio + ", @Telefono = " + Telefono + ", @Email = '" + Email + "'";
 
             DataTable tabla = new DataTable();
 
@@ -431,5 +431,36 @@ namespace VENTANASMAD
             return tabla;
         }
 
+        public DataTable gestionReportes(string Op, string Fecha)
+        {
+
+            string qry = "EXEC sp_Reportes @Op = '" + Op + "', @Fecha = " + Fecha + "";
+
+            DataTable tabla = new DataTable();
+
+            try
+            {
+                conectar();
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.Text;
+                _comandosql.CommandTimeout = 1200;
+
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
+
+            }
+            catch (SqlException e)
+            {
+                var msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            return tabla;
+        }
     }
 }

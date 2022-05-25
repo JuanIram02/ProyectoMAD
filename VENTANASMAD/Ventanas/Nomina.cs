@@ -20,7 +20,7 @@ namespace VENTANASMAD
         {
             var db = new EnlaceDB();
 
-            var empresa = db.gestionEmpresa("T", "null", "null", "null", "null", "null", "null");
+            var empresa = db.gestionEmpresa("T", "null", "null", "null", "null", "null", "null", "null");
 
             if (empresa.Rows.Count == 0)
             {
@@ -83,7 +83,7 @@ namespace VENTANASMAD
 
                     for(int y = 0; y < deducciones.Rows.Count; y++)
                     {
-                        string p = deducciones.Rows[i][4].ToString();
+                        string p = deducciones.Rows[y][4].ToString();
 
                         if (p.StartsWith("0."))
                         {
@@ -103,7 +103,7 @@ namespace VENTANASMAD
 
                     for (int y = 0; y < percepciones.Rows.Count; y++)
                     {
-                        string p = percepciones.Rows[i][4].ToString();
+                        string p = percepciones.Rows[y][4].ToString();
 
                         if (p.StartsWith("."))
                         {
@@ -138,6 +138,9 @@ namespace VENTANASMAD
                         db.gestionListaD("U", deducciones.Rows[y][0].ToString(), "null", "null", "null", "null", "null", nomina);
                     }
                     */
+
+                    var nominas = db.gestionNominas("V", "null", "null", "null", "null", "null", "null", "null", "null", "null");
+                    dataGridView1.DataSource = nominas;
                 }
             }
         }
@@ -148,6 +151,26 @@ namespace VENTANASMAD
 
             var nominas = db.gestionNominas("V", "null", "null", "null", "null", "null", "null", "null", "null", "null");
             dataGridView1.DataSource = nominas;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var sl = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+
+            if (sl == 0)
+            {
+                MessageBox.Show("Seleccione una Nomina", "Aviso");
+            }
+            else
+            {
+                var PDF = new PDF();
+
+                var nomina = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+
+                PDF.generaPDF(nomina);
+
+                MessageBox.Show("Recibo generado exitosamente", "Aviso");
+            }
         }
     }
 }
