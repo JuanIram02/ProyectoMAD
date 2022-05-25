@@ -69,12 +69,16 @@ namespace VENTANASMAD
 
                 var nominados = db.gestionEmpleados("G", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", fechaNomina, "null", "null", "null", "null", "null");
 
+                var numNominas = nominados.Rows.Count;
+
                 for (int i = 0; i < nominados.Rows.Count; i++)
                 {                  
                     float NivelSalarial = float.Parse(db.gestionDepartamentos("S", nominados.Rows[i][16].ToString(), "null", "null", "null").Rows[0][2].ToString());
                     float SueldoBase = float.Parse(db.gestionPuestos("S", nominados.Rows[i][17].ToString(), "null", "null", "null").Rows[0][2].ToString());
 
                     float sueldoBruto = monthDays * SueldoBase * NivelSalarial / 100;
+
+                    float ISR = sueldoBruto * (30 / 100);
 
                     var deducciones = db.gestionListaD("F", "null", nominados.Rows[i][0].ToString(), "null", fecha, fechaAux, "null", "null");
                     var percepciones = db.gestionListaP("F", "null", nominados.Rows[i][0].ToString(), "null", fecha, fechaAux, "null", "null");
@@ -121,7 +125,7 @@ namespace VENTANASMAD
                         }
                     }
 
-                    float sueldoNeto = sueldoBruto + sumatoria;
+                    float sueldoNeto = sueldoBruto + sumatoria - ISR - 350;
 
                     db.gestionNominas("I", "null", "abril", nominados.Rows[i][0].ToString(), nominados.Rows[i][16].ToString(), nominados.Rows[i][17].ToString(), RFCEmpresa, fechaNomina, sueldoBruto.ToString(), sueldoNeto.ToString());
 
@@ -138,10 +142,13 @@ namespace VENTANASMAD
                         db.gestionListaD("U", deducciones.Rows[y][0].ToString(), "null", "null", "null", "null", "null", nomina);
                     }
                     */
-
-                    var nominas = db.gestionNominas("V", "null", "null", "null", "null", "null", "null", "null", "null", "null");
-                    dataGridView1.DataSource = nominas;
+                   
                 }
+
+                MessageBox.Show(numNominas +  " Nominas registradas", "Aviso");
+
+                var nominas = db.gestionNominas("V", "null", "null", "null", "null", "null", "null", "null", "null", "null");
+                dataGridView1.DataSource = nominas;
             }
         }
 

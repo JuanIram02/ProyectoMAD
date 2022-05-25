@@ -118,5 +118,15 @@ namespace VENTANASMAD
             dataGridView1.DataSource = empleados;
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var db = new EnlaceDB();
+
+            var empleado = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+
+            var empleados = db.gestionEmpleados("B", empleado, "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null");
+            dataGridView1.DataSource = empleados;
+        }
     }
 }

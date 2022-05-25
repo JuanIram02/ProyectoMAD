@@ -74,7 +74,7 @@ BEGIN
 
    IF @Op = 'V' --vista
    BEGIN
-		SELECT ID, Fecha, Nombre, Departamento, Puesto, [Folio fiscal], Sueldo 
+		SELECT ID, Fecha, Nombre, Departamento, Puesto, [Folio fiscal], [Sueldo Bruto], [Sueldo Neto]
 			FROM vw_Nominas
    END
 

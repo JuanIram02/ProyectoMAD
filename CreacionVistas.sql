@@ -9,7 +9,7 @@ IF OBJECT_ID('vw_Deducciones') IS NOT NULL
 Go
 
 CREATE VIEW vw_Deducciones AS 
-	SELECT IDDeduccion as ID, Porcentaje, Cantidad, Descripcion
+	SELECT IDDeduccion as ID, concat('%',Porcentaje)AS Porcentaje, concat('%',Cantidad)AS Cantidad, Descripcion
 			FROM Deducciones 
 Go
 
@@ -21,7 +21,7 @@ IF OBJECT_ID('vw_Percepciones') IS NOT NULL
 Go
 
 CREATE VIEW vw_Percepciones AS 
-	SELECT IDPercepcion as ID, Porcentaje, Cantidad, Descripcion
+	SELECT IDPercepcion as ID, concat('%',Porcentaje)AS Porcentaje, concat('%',Cantidad)AS Cantidad, Descripcion
 			FROM Percepciones 
 Go
 

@@ -19,7 +19,7 @@ BEGIN
 IF @Op = 'G' --select fecha
    BEGIN
         SELECT Departamento, Puesto, Nombre, [Fecha de Inicio], Edad, [Sueldo Diario]
-			FROM vw_ReporteGeneralNomina WHERE [Fecha de Inicio] <= @Fecha
+			FROM vw_ReporteGeneralNomina WHERE [Fecha de Inicio] <= @Fecha ORDER BY Departamento
    END
 
 END
