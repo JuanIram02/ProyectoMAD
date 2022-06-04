@@ -20,6 +20,12 @@ namespace VENTANASMAD
         {
             var db = new EnlaceDB();
 
+            string df1 = "0." + textBox12.Text;
+            string df2 = textBox6.Text;
+
+            float isrAux = float.Parse(df1);
+            float IMSS = float.Parse(df2);
+
             var empresa = db.gestionEmpresa("T", "null", "null", "null", "null", "null", "null", "null");
 
             if (empresa.Rows.Count == 0)
@@ -60,7 +66,6 @@ namespace VENTANASMAD
                     numDias = monthDays.ToString();
                 }
 
-
                 string fechaNomina = "'" + dateTimePicker1.Value.Year.ToString() + mes + dia + "'";
                 string fecha = "'" + dateTimePicker1.Value.Year.ToString() + mes + "01'";
                 string fechaAux = "'" + dateTimePicker1.Value.Year.ToString() + mes + numDias + "'";
@@ -78,7 +83,7 @@ namespace VENTANASMAD
 
                     float sueldoBruto = monthDays * SueldoBase * NivelSalarial / 100;
 
-                    float ISR = sueldoBruto * (30 / 100);
+                    float ISR = (float)(sueldoBruto * isrAux);
 
                     var deducciones = db.gestionListaD("F", "null", nominados.Rows[i][0].ToString(), "null", fecha, fechaAux, "null", "null");
                     var percepciones = db.gestionListaP("F", "null", nominados.Rows[i][0].ToString(), "null", fecha, fechaAux, "null", "null");
@@ -111,11 +116,9 @@ namespace VENTANASMAD
 
                         if (p.StartsWith("."))
                         {
-
                             float porcentaje = float.Parse(p);
 
                             sumatoria = sumatoria + (sueldoBruto * porcentaje);
-
                         }
                         else
                         {
@@ -125,7 +128,7 @@ namespace VENTANASMAD
                         }
                     }
 
-                    float sueldoNeto = sueldoBruto + sumatoria - ISR - 350;
+                    float sueldoNeto = sueldoBruto + sumatoria - ISR - IMSS;
 
                     db.gestionNominas("I", "null", "abril", nominados.Rows[i][0].ToString(), nominados.Rows[i][16].ToString(), nominados.Rows[i][17].ToString(), RFCEmpresa, fechaNomina, sueldoBruto.ToString(), sueldoNeto.ToString());
 
@@ -156,6 +159,9 @@ namespace VENTANASMAD
         {
             var db = new EnlaceDB();
 
+            textBox12.Text = "30";
+            textBox6.Text = "350";
+           
             var nominas = db.gestionNominas("V", "null", "null", "null", "null", "null", "null", "null", "null", "null");
             dataGridView1.DataSource = nominas;
         }

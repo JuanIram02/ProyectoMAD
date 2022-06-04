@@ -65,8 +65,7 @@ namespace VENTANASMAD
                     var empleado = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
 
                     db.setEmpleado(empleado);
-
-                    this.Hide();
+                   
                     AgregarPercepcion f3 = new AgregarPercepcion();
                     f3.ShowDialog();
                 }     
@@ -97,8 +96,7 @@ namespace VENTANASMAD
                     var empleado = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
 
                     db.setEmpleado(empleado);
-
-                    this.Hide();
+                   
                     AgregarDeduccion f3 = new AgregarDeduccion();
                     f3.ShowDialog();
                 }
@@ -107,7 +105,30 @@ namespace VENTANASMAD
 
         private void button4_Click(object sender, EventArgs e)
         {
+            var db = new EnlaceDB();
 
+            if (radioButton1.Checked)
+            {
+                var empleados = db.gestionEmpleados("Y", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", textBox17.Text, "null", "null", "null", "null");
+                dataGridView1.DataSource = empleados;
+            }
+            else if (radioButton2.Checked)
+            {
+                if(textBox18.Text != "")
+                {
+                    var empleados = db.gestionEmpleados("W", textBox18.Text, "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null");
+                    dataGridView1.DataSource = empleados;
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese un numero de empleado");
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un metodo de busqueda");
+            }
         }
 
         private void Empleados_Load(object sender, EventArgs e)
@@ -123,10 +144,35 @@ namespace VENTANASMAD
         {
             var db = new EnlaceDB();
 
-            var empleado = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            var id = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
 
-            var empleados = db.gestionEmpleados("B", empleado, "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null");
+            db.gestionEmpleados("B", id, "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null");
+
+            var empleados = db.gestionEmpleados("V", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null");
             dataGridView1.DataSource = empleados;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var sl = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+
+            if (sl == 0)
+            {
+                MessageBox.Show("Seleccione un empleado", "Aviso");
+            }
+            else
+            {
+                var db = new EnlaceDB();
+
+                var empleado = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+
+                db.setEmpleado(empleado);
+
+                this.Hide();
+                EDITAREMPLEADO f5 = new EDITAREMPLEADO();
+                f5.ShowDialog();
+            }
+        }
+
     }
 }

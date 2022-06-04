@@ -9,7 +9,7 @@ IF OBJECT_ID('vw_Deducciones') IS NOT NULL
 Go
 
 CREATE VIEW vw_Deducciones AS 
-	SELECT IDDeduccion as ID, concat('%',Porcentaje)AS Porcentaje, concat('%',Cantidad)AS Cantidad, Descripcion
+	SELECT IDDeduccion as ID, concat(ISNULL(Porcentaje, 0), '%')AS Porcentaje, concat('$', ISNULL(Cantidad, 0))AS Cantidad, Descripcion
 			FROM Deducciones 
 Go
 
@@ -21,7 +21,7 @@ IF OBJECT_ID('vw_Percepciones') IS NOT NULL
 Go
 
 CREATE VIEW vw_Percepciones AS 
-	SELECT IDPercepcion as ID, concat('%',Porcentaje)AS Porcentaje, concat('%',Cantidad)AS Cantidad, Descripcion
+	SELECT IDPercepcion as ID, concat(ISNULL(Porcentaje, 0), '%')AS Porcentaje, concat('$', ISNULL(Cantidad, 0))AS Cantidad, Descripcion
 			FROM Percepciones 
 Go
 
@@ -33,7 +33,7 @@ IF OBJECT_ID('vw_Departamentos') IS NOT NULL
 Go
 
 CREATE VIEW vw_Departamentos AS 
-	SELECT IDDepartamento as ID, Nombre, CONCAT('$',SueldoBase) as 'Sueldo por dia'
+	SELECT IDDepartamento as ID, Nombre, CONCAT('$', ISNULL(SueldoBase, 0)) as 'Sueldo por dia'
 			FROM Departamentos WHERE Estatus = 1
 Go
 
@@ -45,7 +45,7 @@ IF OBJECT_ID('vw_Puestos') IS NOT NULL
 Go
 
 CREATE VIEW vw_Puestos AS 
-	SELECT IDPuesto as ID, Nombre, CONCAT('%',NivelSalarial) as 'Nivel Salarial'
+	SELECT IDPuesto as ID, Nombre, CONCAT(ISNULL(NivelSalarial,0), '%') as 'Nivel Salarial'
 			FROM Puestos WHERE Estatus = 1
 Go
 
@@ -75,7 +75,7 @@ IF OBJECT_ID('vw_Nominas') IS NOT NULL
 Go
 
 CREATE VIEW vw_Nominas AS 
-	SELECT N.IDNomina as ID, N.Fecha, CAST(E.Nombres + ' ' + E.ApPaterno + ' ' + E.ApMaterno as varchar) as Nombre, D.Nombre as Departamento, P.Nombre as Puesto, N.FolioFiscal as 'Folio fiscal', CONCAT('$',CONVERT(VARCHAR,CAST(N.SueldoNeto AS MONEY),1)) as 'Sueldo'
+	SELECT N.IDNomina as ID, N.Fecha, CAST(E.Nombres + ' ' + E.ApPaterno + ' ' + E.ApMaterno as varchar) as Nombre, D.Nombre as Departamento, P.Nombre as Puesto, N.FolioFiscal as 'Folio fiscal', CONCAT('$',CONVERT(VARCHAR,CAST(N.SueldoBruto AS MONEY),1)) as 'Sueldo Bruto',CONCAT('$',CONVERT(VARCHAR,CAST(N.SueldoNeto AS MONEY),1)) as 'Sueldo Neto'
 		FROM Nominas N
 			INNER JOIN Empleados E
 			ON N.Empleado = E.NumeroEmpleado

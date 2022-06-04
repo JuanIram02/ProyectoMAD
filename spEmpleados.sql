@@ -23,7 +23,7 @@ CREATE PROCEDURE sp_GestionEmpleados
 	@Domicilio					INT = NULL,
 	@FechaInicio				DATE = NULL,
 	@FechaNacimiento			DATE = NULL,
-	@Nombres					VARCHAR(30) = NULL,
+	@Nombres					VARCHAR(50) = NULL,
 	@ApPaterno					VARCHAR(30) = NULL,
 	@ApMaterno                  VARCHAR(30) = NULL,
 	@Departamento				INT = NULL,
@@ -92,10 +92,28 @@ BEGIN
 			FROM Empleados 
    END
 
-   IF @Op = 'N' --inicio sesion
+   IF @Op = 'L' --buscar por curp
+   BEGIN
+       SELECT NumeroEmpleado, CURP, NSS, RFC, NombreU, Contraseña, TipoUsuario, Estatus, Email, Telefono, Domicilio, FechaInicio, FechaNacimiento, Nombres, ApPaterno, ApMaterno, Departamento, Puesto 
+			FROM Empleados WHERE CURP LIKE @CURP AND Estatus LIKE 1
+   END
+
+   IF @Op = 'P' --buscar por curp
+   BEGIN
+       SELECT NumeroEmpleado, CURP, NSS, RFC, NombreU, Contraseña, TipoUsuario, Estatus, Email, Telefono, Domicilio, FechaInicio, FechaNacimiento, Nombres, ApPaterno, ApMaterno, Departamento, Puesto 
+			FROM Empleados WHERE RFC LIKE @RFC AND Estatus LIKE 1
+   END
+
+   IF @Op = 'N' --buscar por contraseña y nombre
    BEGIN
        SELECT NumeroEmpleado, CURP, NSS, RFC, NombreU, Contraseña, TipoUsuario, Estatus, Email, Telefono, Domicilio, FechaInicio, FechaNacimiento, Nombres, ApPaterno, ApMaterno, Departamento, Puesto 
 			FROM Empleados WHERE NombreU LIKE @NombreU AND Contraseña LIKE @Contraseña AND Estatus LIKE 1
+   END
+
+   IF @Op = 'M' --buscar por nombre
+   BEGIN
+       SELECT NumeroEmpleado, CURP, NSS, RFC, NombreU, Contraseña, TipoUsuario, Estatus, Email, Telefono, Domicilio, FechaInicio, FechaNacimiento, Nombres, ApPaterno, ApMaterno, Departamento, Puesto 
+			FROM Empleados WHERE NombreU LIKE @NombreU AND Estatus LIKE 1
    END
 
    IF @Op = 'X' --select solo a los activos
@@ -108,6 +126,18 @@ BEGIN
    BEGIN
        SELECT [Numero de Empleado], Nombre, Departamento, Puesto, RFC, [Fecha de inicio]
 			FROM vw_Empleados 
+   END
+
+   IF @Op = 'W' --vista numero empleado
+   BEGIN
+       SELECT [Numero de Empleado], Nombre, Departamento, Puesto, RFC, [Fecha de inicio]
+			FROM vw_Empleados WHERE [Numero de Empleado] = @NumeroEmpleado
+   END
+
+   IF @Op = 'Y' --vista nombre
+   BEGIN
+       SELECT [Numero de Empleado], Nombre, Departamento, Puesto, RFC, [Fecha de inicio]
+			FROM vw_Empleados WHERE Nombre LIKE '%' + @Nombres + '%'
    END
 
    IF @Op = 'F' --despues de una fecha

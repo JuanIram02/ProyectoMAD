@@ -36,6 +36,10 @@ namespace VENTANASMAD
                 var t = db.gestionTelefonos("S", empresa.Rows[0][5].ToString(), "null", "null", "null");
                 textBox1.Text = empresa.Rows[0][1].ToString();
                 textBox2.Text = empresa.Rows[0][2].ToString();
+
+                var fecha = empresa.Rows[0][3];
+                dateTimePicker1.Value = new DateTime(((System.DateTime)fecha).Year, ((System.DateTime)fecha).Month, ((System.DateTime)fecha).Day);
+
                 textBox3.Text = empresa.Rows[0][0].ToString();
                 dateTimePicker1.Text = empresa.Rows[0][3].ToString();
                 textBox4.Text = d.Rows[0][1].ToString();
@@ -59,7 +63,7 @@ namespace VENTANASMAD
             var rw = sl.Rows[0];
             var domicilio = rw[0];
            
-            db.gestionTelefonos("I", "null", textBox6.Text, "null", "null");
+            db.gestionTelefonos("I", "null", textBox6.Text, "", "");
           
             var sl2 = db.gestionTelefonos("M", "null", "null", "null", "null");
             var rw2 = sl2.Rows[0];
@@ -94,6 +98,11 @@ namespace VENTANASMAD
             }
             else
             {
+                var empresa = db.gestionEmpresa("T", "null", "null", "null", "null", "null", "null", "null");
+
+                var t = db.gestionTelefonos("D", empresa.Rows[0][5].ToString(), "null", "null", "null");
+                var d = db.gestionDomicilios("D", empresa.Rows[0][4].ToString(), "null", "null", "null", "null", "null", "null");
+
                 db.gestionEmpresa("U", textBox3.Text, textBox1.Text, textBox2.Text, fechaI, domicilio.ToString(), telefonos.ToString(), textBox5.Text);
                 MessageBox.Show("Empresa editada exitosamente", "Aviso");
             }

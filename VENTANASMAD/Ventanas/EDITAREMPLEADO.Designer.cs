@@ -1,7 +1,7 @@
 ﻿
 namespace VENTANASMAD
 {
-    partial class AÑADIREMPLEADO
+    partial class EDITAREMPLEADO
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,6 @@ namespace VENTANASMAD
         private void InitializeComponent()
         {
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -47,13 +46,10 @@ namespace VENTANASMAD
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -78,10 +74,14 @@ namespace VENTANASMAD
             this.label24 = new System.Windows.Forms.Label();
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label25 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -91,23 +91,6 @@ namespace VENTANASMAD
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(199, 20);
             this.dateTimePicker1.TabIndex = 133;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Banco Azteca",
-            "BBVA",
-            "Bancomer",
-            "Santander",
-            "Afirme",
-            "Banorte",
-            "Citibanamex"});
-            this.comboBox3.Location = new System.Drawing.Point(284, 232);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(199, 21);
-            this.comboBox3.TabIndex = 131;
             // 
             // comboBox2
             // 
@@ -271,14 +254,6 @@ namespace VENTANASMAD
             this.textBox1.Size = new System.Drawing.Size(199, 20);
             this.textBox1.TabIndex = 113;
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(284, 284);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(199, 20);
-            this.textBox2.TabIndex = 112;
-            // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(284, 179);
@@ -314,30 +289,6 @@ namespace VENTANASMAD
             this.label1.Size = new System.Drawing.Size(61, 15);
             this.label1.TabIndex = 108;
             this.label1.Text = "Teléfono 1";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(281, 267);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 15);
-            this.label2.TabIndex = 107;
-            this.label2.Text = "Número de Cuenta";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(281, 215);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 15);
-            this.label3.TabIndex = 106;
-            this.label3.Text = "Banco";
             // 
             // label4
             // 
@@ -509,9 +460,9 @@ namespace VENTANASMAD
             this.label22.Location = new System.Drawing.Point(21, 21);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(182, 23);
+            this.label22.Size = new System.Drawing.Size(177, 23);
             this.label22.TabIndex = 135;
-            this.label22.Text = "Añadir Empleado";
+            this.label22.Text = "Editar Empleado";
             // 
             // button1
             // 
@@ -523,7 +474,7 @@ namespace VENTANASMAD
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(116, 40);
             this.button1.TabIndex = 134;
-            this.button1.Text = "Agregar";
+            this.button1.Text = "Editar";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -595,32 +546,6 @@ namespace VENTANASMAD
             this.label19.TabIndex = 141;
             this.label19.Text = "Usuario";
             // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.ForeColor = System.Drawing.Color.White;
-            this.radioButton2.Location = new System.Drawing.Point(295, 456);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(72, 17);
-            this.radioButton2.TabIndex = 144;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Empleado";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.ForeColor = System.Drawing.Color.White;
-            this.radioButton1.Location = new System.Drawing.Point(295, 429);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(63, 17);
-            this.radioButton1.TabIndex = 143;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Gerente";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -646,16 +571,93 @@ namespace VENTANASMAD
             this.label25.TabIndex = 146;
             this.label25.Text = "* Campo opcional";
             // 
-            // AÑADIREMPLEADO
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(281, 215);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 15);
+            this.label3.TabIndex = 106;
+            this.label3.Text = "Banco";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(281, 267);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(106, 15);
+            this.label2.TabIndex = 107;
+            this.label2.Text = "Número de Cuenta";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(284, 284);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(199, 20);
+            this.textBox2.TabIndex = 112;
+            this.textBox2.Text = "457683";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Banco Azteca",
+            "BBVA",
+            "Bancomer",
+            "Santander",
+            "Afirme",
+            "Banorte",
+            "Citibanamex"});
+            this.comboBox3.Location = new System.Drawing.Point(284, 232);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(199, 21);
+            this.comboBox3.TabIndex = 131;
+            this.comboBox3.Text = "Afirme";
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.ForeColor = System.Drawing.Color.White;
+            this.radioButton2.Location = new System.Drawing.Point(295, 456);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(72, 17);
+            this.radioButton2.TabIndex = 148;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Empleado";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.ForeColor = System.Drawing.Color.White;
+            this.radioButton1.Location = new System.Drawing.Point(295, 429);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(63, 17);
+            this.radioButton1.TabIndex = 147;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Gerente";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // EDITAREMPLEADO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(786, 563);
-            this.Controls.Add(this.label25);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.label25);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.textBox19);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.textBox15);
@@ -707,8 +709,8 @@ namespace VENTANASMAD
             this.Controls.Add(this.label8);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "AÑADIREMPLEADO";
-            this.Text = "AÑADIREMPLEADO";
+            this.Name = "EDITAREMPLEADO";
+            this.Text = "EDITAREMPLEADO";
             this.Load += new System.EventHandler(this.AÑADIREMPLEADO_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -718,7 +720,6 @@ namespace VENTANASMAD
         #endregion
 
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label20;
@@ -735,13 +736,10 @@ namespace VENTANASMAD
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -766,9 +764,13 @@ namespace VENTANASMAD
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox textBox19;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
