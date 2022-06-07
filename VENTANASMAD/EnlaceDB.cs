@@ -49,35 +49,6 @@ namespace VENTANASMAD
         {
             _conexion.Close();
         }      
-        public DataTable ConsultaTabla(string SP)
-        {
-            var msg = "";
-            DataTable tabla = new DataTable();
-            try
-            {
-                conectar();
-                string qry = SP;
-                _comandosql = new SqlCommand(qry, _conexion);
-                _comandosql.CommandType = CommandType.Text;
-                _comandosql.CommandTimeout = 1200;
-
-                _adaptador.SelectCommand = _comandosql;
-                _adaptador.Fill(tabla);
-
-            }
-            catch (SqlException e)
-            {
-                msg = "Excepción de base de datos: \n";
-                msg += e.Message;
-                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            }
-            finally
-            {
-                desconectar();
-            }
-
-            return tabla;
-        }
 
         public DataTable gestionDeducciones(string Op, string IDDeduccion, string Porcentaje, string Cantidad, string Descripcion)
         {
@@ -431,10 +402,10 @@ namespace VENTANASMAD
             return tabla;
         }
 
-        public DataTable gestionReportes(string Op, string Fecha)
+        public DataTable gestionReportes(string Op, string Fecha, string Aux, string Departamento, string Puesto)
         {
 
-            string qry = "EXEC sp_Reportes @Op = '" + Op + "', @Fecha = " + Fecha + "";
+            string qry = "EXEC sp_Reportes @Op = '" + Op + "', @Fecha = " + Fecha + ", @Aux = " + Aux + ", @Departamento = " + Departamento + ", @Puesto = " + Puesto + "";
 
             DataTable tabla = new DataTable();
 

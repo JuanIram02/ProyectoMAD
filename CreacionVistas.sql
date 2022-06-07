@@ -107,23 +107,4 @@ CREATE VIEW vw_ReporteGeneralNomina AS
 
 Go
 
---Reporte HeadCounter
 
-IF OBJECT_ID('vw_ReporteHeadCounter') IS NOT NULL
-   DROP VIEW vw_ReporteHeadCounter
-
-Go
-
-CREATE VIEW vw_ReporteHeadCounter AS 
-
-	SELECT D.Nombre as Departamento, P.Nombre as Puesto, dbo.cuentaDP(D.IDDepartamento) as 'Numero de Empledos'
-	FROM Departamentos D
-			INNER JOIN Empleados E 
-			ON D.IDDepartamento = E.Departamento			
-			INNER JOIN Puestos P 
-			ON E.Puesto = P.IDPuesto
-	ORDER BY D.IDDepartamento
-
-Go
-
-select * from empleados

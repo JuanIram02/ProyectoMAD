@@ -1,6 +1,32 @@
 USE DB_MAD;
 Go
 
+--Cuenta empleados por departamento
+
+IF OBJECT_ID('cuentaD') IS NOT NULL
+   DROP FUNCTION cuentaD
+
+Go
+
+CREATE FUNCTION cuentaD(@departamento INT) 
+	RETURNS INT AS
+BEGIN
+
+	DECLARE @numEmpleados INT;
+
+		SELECT @numEmpleados = COUNT(*)
+		FROM Empleados		
+		WHERE Departamento = @Departamento 
+		GROUP BY Departamento
+	
+		IF @numEmpleados IS NULL
+			set @numEmpleados =  0		
+
+	RETURN @numEmpleados
+
+END;
+Go
+
 --Cuenta empleados por departamento y puesto
 
 IF OBJECT_ID('cuentaDP') IS NOT NULL
@@ -11,16 +37,17 @@ Go
 CREATE FUNCTION cuentaDP(@departamento INT, @puesto INT) 
 	RETURNS INT AS
 BEGIN
+
 	DECLARE @numEmpleados INT;
 
-	SELECT @numEmpleados = COUNT(*)
+		SELECT @numEmpleados = COUNT(*)
 		FROM Empleados		
-		WHERE @departamento = Departamento 
+		WHERE Departamento = @Departamento AND Puesto = @Puesto
 		GROUP BY Departamento
 	
-	IF @numEmpleados IS NULL
-		set @numEmpleados =  0
-	
+		IF @numEmpleados IS NULL
+			set @numEmpleados =  0		
+
 	RETURN @numEmpleados
 
 END;

@@ -135,9 +135,9 @@ namespace VENTANASMAD
             this.label20.Location = new System.Drawing.Point(281, 365);
             this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(86, 15);
+            this.label20.Size = new System.Drawing.Size(81, 15);
             this.label20.TabIndex = 126;
-            this.label20.Text = "Departamentos";
+            this.label20.Text = "Departamento";
             // 
             // label21
             // 
