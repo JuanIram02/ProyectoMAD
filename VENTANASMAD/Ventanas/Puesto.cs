@@ -27,15 +27,23 @@ namespace VENTANASMAD
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var db = new EnlaceDB();
+            if(textBox12.Text == "")
+            {
+                MessageBox.Show("Ingrese un nombre para el puesto");
+            }
+            else
+            {
+                var db = new EnlaceDB();
 
-            db.gestionPuestos("I", "null", textBox12.Text, textBox6.Text, "1");
+                db.gestionPuestos("I", "null", textBox12.Text, textBox6.Text, "1");
 
-            textBox12.Clear();
-            textBox6.Clear();
+                textBox12.Clear();
+                textBox6.Clear();
 
-            var puestos = db.gestionPuestos("V", "null", "null", "null", "null");
-            dataGridView1.DataSource = puestos;
+                var puestos = db.gestionPuestos("V", "null", "null", "null", "null");
+                dataGridView1.DataSource = puestos;
+            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)

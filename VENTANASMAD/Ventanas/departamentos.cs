@@ -27,15 +27,22 @@ namespace VENTANASMAD
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var db = new EnlaceDB();
+            if(textBox1.Text == "")
+            {
+                MessageBox.Show("Ingrese un nombre para el departamento");
+            }
+            else
+            {
+                var db = new EnlaceDB();
 
-            db.gestionDepartamentos("I", "null", textBox1.Text, numericUpDown1.Value.ToString(), "1");
+                db.gestionDepartamentos("I", "null", textBox1.Text, numericUpDown1.Value.ToString(), "1");
 
-            textBox1.Clear();
-            numericUpDown1.Value = 0;
+                textBox1.Clear();
+                numericUpDown1.Value = 0;
 
-            var departamentos = db.gestionDepartamentos("V", "null", "null", "null", "null");
-            dataGridView1.DataSource = departamentos;
+                var departamentos = db.gestionDepartamentos("V", "null", "null", "null", "null");
+                dataGridView1.DataSource = departamentos;
+            }          
         }
 
         private void button2_Click(object sender, EventArgs e)
