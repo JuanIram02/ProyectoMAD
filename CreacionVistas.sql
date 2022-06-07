@@ -1,4 +1,4 @@
-use DB_MAD;
+USE DB_MAD;
 Go
 
 --Deducciones
@@ -58,7 +58,10 @@ Go
 
 CREATE VIEW vw_Empleados AS 
 
-	SELECT E.NumeroEmpleado as 'Numero de Empleado', CAST(E.Nombres + ' ' + E.ApPaterno + ' ' + E.ApMaterno as varchar) as Nombre, D.Nombre as Departamento, P.Nombre as Puesto, E.RFC, E.FechaInicio as 'Fecha de inicio'
+	SELECT E.NumeroEmpleado as 'Numero de Empleado', CAST(E.Nombres + ' ' + E.ApPaterno + ' ' + E.ApMaterno as varchar) as Nombre, 
+			CASE WHEN D.Estatus = 1 THEN D.Nombre WHEN D.Estatus = 0 THEN 'Departamento eliminado' END AS Departamento, 
+			CASE WHEN P.Estatus = 1 THEN P.Nombre WHEN P.Estatus = 0 THEN 'Puesto eliminado' END AS Puesto, 
+			E.RFC, E.FechaInicio as 'Fecha de inicio'
 		FROM Empleados E 
 			INNER JOIN Departamentos D
 			ON E.Departamento = D.IDDepartamento
@@ -103,3 +106,24 @@ CREATE VIEW vw_ReporteGeneralNomina AS
 			ON E.Puesto = P.IDPuesto
 
 Go
+
+--Reporte HeadCounter
+
+IF OBJECT_ID('vw_ReporteHeadCounter') IS NOT NULL
+   DROP VIEW vw_ReporteHeadCounter
+
+Go
+
+CREATE VIEW vw_ReporteHeadCounter AS 
+
+	SELECT D.Nombre as Departamento, P.Nombre as Puesto, dbo.cuentaDP(D.IDDepartamento) as 'Numero de Empledos'
+	FROM Departamentos D
+			INNER JOIN Empleados E 
+			ON D.IDDepartamento = E.Departamento			
+			INNER JOIN Puestos P 
+			ON E.Puesto = P.IDPuesto
+	ORDER BY D.IDDepartamento
+
+Go
+
+select * from empleados

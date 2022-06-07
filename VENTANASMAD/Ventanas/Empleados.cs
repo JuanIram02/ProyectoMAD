@@ -146,10 +146,14 @@ namespace VENTANASMAD
 
             var id = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
 
-            db.gestionEmpleados("B", id, "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null");
+            DialogResult sn = MessageBox.Show("Seguro de que desea eliminar el empleado numero " + id + "?", "Aviso", MessageBoxButtons.YesNo);
+            if (sn == DialogResult.Yes)
+            {
+                db.gestionEmpleados("B", id, "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null");
 
-            var empleados = db.gestionEmpleados("V", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null");
-            dataGridView1.DataSource = empleados;
+                var empleados = db.gestionEmpleados("V", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null");
+                dataGridView1.DataSource = empleados;
+            }                    
         }
 
         private void button1_Click(object sender, EventArgs e)

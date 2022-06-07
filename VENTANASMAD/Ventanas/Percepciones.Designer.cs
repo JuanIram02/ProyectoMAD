@@ -92,6 +92,7 @@ namespace VENTANASMAD
             this.button2.TabIndex = 91;
             this.button2.Text = "Eliminar";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 

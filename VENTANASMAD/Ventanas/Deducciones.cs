@@ -92,5 +92,21 @@ namespace VENTANASMAD
             dataGridView1.DataSource = deducciones;
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var db = new EnlaceDB();
+
+            var id = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+
+            DialogResult sn = MessageBox.Show("Seguro de que desea eliminar la deduccion numero " + id + "?\nSi hace esto dejara de estar aplicada a un empleado", "Aviso", MessageBoxButtons.YesNo);
+            if (sn == DialogResult.Yes)
+            {
+                db.gestionDeducciones("D", id, "null", "null", "null");
+
+                var deducciones = db.gestionDeducciones("V", "null", "null", "null", "null");
+                dataGridView1.DataSource = deducciones;
+            }
+        }
     }
 }

@@ -10,13 +10,20 @@ Go
 CREATE PROCEDURE sp_Reportes
 (
 	@Op							CHAR(1),
-    @Fecha						DATE
+    @Fecha						DATE,
+	@Aux						INT
 
 )
 AS
 BEGIN
 
-IF @Op = 'G' --select fecha
+IF @Op = 'G' --General de Nomina
+   BEGIN
+        SELECT Departamento, Puesto, Nombre, [Fecha de Inicio], Edad, [Sueldo Diario]
+			FROM vw_ReporteGeneralNomina WHERE [Fecha de Inicio] <= @Fecha ORDER BY Departamento
+   END
+
+IF @Op = 'P' --General de Nomina
    BEGIN
         SELECT Departamento, Puesto, Nombre, [Fecha de Inicio], Edad, [Sueldo Diario]
 			FROM vw_ReporteGeneralNomina WHERE [Fecha de Inicio] <= @Fecha ORDER BY Departamento
