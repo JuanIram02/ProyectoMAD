@@ -85,20 +85,42 @@ namespace VENTANASMAD
 
             var db = new EnlaceDB();
 
+            string mes;
+            if (dateTimePicker1.Value.Month < 10)
+            {
+                mes = "0" + dateTimePicker1.Value.Month.ToString();
+            }
+            else
+            {
+                mes = dateTimePicker1.Value.Month.ToString();
+            }
+
+            string dia;
+            if (dateTimePicker1.Value.Day < 10)
+            {
+                dia = "0" + dateTimePicker1.Value.Day.ToString();
+            }
+            else
+            {
+                dia = dateTimePicker1.Value.Day.ToString();
+            }
+
+            string fechaI = "'" + dateTimePicker1.Value.Year.ToString() + mes + dia + "'";
+
             if (comboBox1.Text == "")
             {
                 if (comboBox2.Text != "")
                 {
                     if (comboBox2.Text == "Todos")
                     {
-                        var reportes = db.gestionReportes("H", "null", "null", "null", "null");
+                        var reportes = db.gestionReportes("H", fechaI, "null", "null", "null");
                         dataGridView1.DataSource = reportes;
                     }
                     else
                     {
                         var departamento = db.gestionDepartamentos("F", "null", comboBox2.Text, "null", "null").Rows[0][0].ToString();
 
-                        var reportes = db.gestionReportes("H", "null", "0", departamento, "null");
+                        var reportes = db.gestionReportes("H", fechaI, "0", departamento, "null");
                         dataGridView1.DataSource = reportes;
                     }
                 }
@@ -114,14 +136,14 @@ namespace VENTANASMAD
                 {
                     if(comboBox2.Text == "Todos" && comboBox1.Text == "Todos")
                     {
-                        var reportes = db.gestionReportes("H", "null", "1", "null", "null");
+                        var reportes = db.gestionReportes("H", fechaI, "1", "null", "null");
                         dataGridView1.DataSource = reportes;
                     }
                     if (comboBox2.Text == "Todos" && comboBox1.Text != "Todos")
                     {
                         var puesto = db.gestionPuestos("F", "null", comboBox1.Text, "null", "null").Rows[0][0].ToString();
 
-                        var reportes = db.gestionReportes("H", "null", "2", "null", puesto);
+                        var reportes = db.gestionReportes("H", fechaI, "2", "null", puesto);
                         dataGridView1.DataSource = reportes;
                     }
                     if (comboBox2.Text != "Todos" && comboBox1.Text != "Todos")
@@ -130,7 +152,7 @@ namespace VENTANASMAD
                         var departamento = db.gestionDepartamentos("F", "null", comboBox2.Text, "null", "null").Rows[0][0].ToString();
 
 
-                        var reportes = db.gestionReportes("H", "null", "3", departamento, puesto);
+                        var reportes = db.gestionReportes("H", fechaI, "3", departamento, puesto);
                         dataGridView1.DataSource = reportes;
                     }
 

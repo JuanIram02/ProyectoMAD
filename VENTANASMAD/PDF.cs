@@ -24,7 +24,7 @@ namespace VENTANASMAD
 
             var puesto = db.gestionPuestos("S", nomina.Rows[0][4].ToString(), "null", "null", "null");
 
-            var empresa = db.gestionEmpresa("S", nomina.Rows[0][5].ToString(), "null", "null", "null", "null", "null", "null");
+            var empresa = db.gestionEmpresa("T", "null", "null", "null", "null", "null", "null", "null");
 
             var percepciones = db.gestionListaP("N", "null", "null", "null", "null", "null", "null", numeroNomina);
 
@@ -295,12 +295,19 @@ namespace VENTANASMAD
                 }
                 if (i == 4)
                 {
-                    //Sueldo Neto
-                    TextFragment txtOne = new TextFragment(sN);
-                    txtOne.Position = new Position(170, 110);
+                    //RFCEmpresa
+                    TextFragment txtOne = new TextFragment(empresa.Rows[0][0].ToString());
+                    txtOne.Position = new Position(160, 745);
                     txtOne.TextState.FontSize = 12;
                     txtOne.TextState.Font = FontRepository.FindFont("Arial");
                     txtOne.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
+
+                    //Registro Patronal
+                    TextFragment txtTwo = new TextFragment(empresa.Rows[0][2].ToString());
+                    txtTwo.Position = new Position(255, 723);
+                    txtTwo.TextState.FontSize = 12;
+                    txtTwo.TextState.Font = FontRepository.FindFont("Arial");
+                    txtTwo.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
 
                     //Sueldo Bruto
                     TextFragment txtFive = new TextFragment(sB);
@@ -312,6 +319,8 @@ namespace VENTANASMAD
 
                     TextBuilder txtBuild = new TextBuilder(page1);    
                     txtBuild.AppendText(txtFive);
+                    txtBuild.AppendText(txtOne);
+                    txtBuild.AppendText(txtTwo);
 
                 }
                 if (i == 5)

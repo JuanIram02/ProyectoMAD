@@ -8,15 +8,15 @@ IF OBJECT_ID('cuentaD') IS NOT NULL
 
 Go
 
-CREATE FUNCTION cuentaD(@departamento INT) 
+CREATE FUNCTION cuentaD(@departamento INT, @Fecha DATE) 
 	RETURNS INT AS
 BEGIN
 
 	DECLARE @numEmpleados INT;
 
 		SELECT @numEmpleados = COUNT(*)
-		FROM Empleados		
-		WHERE Departamento = @Departamento 
+		FROM Empleados				
+		WHERE Departamento = @Departamento AND FechaInicio <= @Fecha
 		GROUP BY Departamento
 	
 		IF @numEmpleados IS NULL
@@ -34,7 +34,7 @@ IF OBJECT_ID('cuentaDP') IS NOT NULL
 
 Go
 
-CREATE FUNCTION cuentaDP(@departamento INT, @puesto INT) 
+CREATE FUNCTION cuentaDP(@departamento INT, @puesto INT, @Fecha DATE) 
 	RETURNS INT AS
 BEGIN
 
@@ -42,7 +42,7 @@ BEGIN
 
 		SELECT @numEmpleados = COUNT(*)
 		FROM Empleados		
-		WHERE Departamento = @Departamento AND Puesto = @Puesto
+		WHERE Departamento = @Departamento AND Puesto = @Puesto AND FechaInicio <= @Fecha
 		GROUP BY Departamento
 	
 		IF @numEmpleados IS NULL

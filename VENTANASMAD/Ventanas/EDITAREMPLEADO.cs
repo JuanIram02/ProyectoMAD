@@ -218,7 +218,6 @@ namespace VENTANASMAD
             textBox18.Text = empleado.Rows[0][13].ToString();
             textBox17.Text = empleado.Rows[0][14].ToString();
             textBox16.Text = empleado.Rows[0][15].ToString();
-            var num = int.Parse(empleado.Rows[0][16].ToString());
             comboBox2.SelectedIndex = (int.Parse(empleado.Rows[0][16].ToString()) - 1);
             comboBox1.SelectedIndex = (int.Parse(empleado.Rows[0][17].ToString()) - 1);
 
