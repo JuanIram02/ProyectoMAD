@@ -82,7 +82,6 @@ namespace VENTANASMAD
                     float SueldoBase = float.Parse(db.gestionPuestos("S", nominados.Rows[i][17].ToString(), "null", "null", "null").Rows[0][2].ToString());
 
                     float sueldoBruto = monthDays * SueldoBase * NivelSalarial / 100;
-
                     float ISR = (float)(sueldoBruto * isrAux);
 
                     var deducciones = db.gestionListaD("F", "null", nominados.Rows[i][0].ToString(), "null", fecha, fechaAux, "null", "null");
@@ -131,8 +130,7 @@ namespace VENTANASMAD
                     float sueldoNeto = sueldoBruto + sumatoria - ISR - IMSS;
 
                     db.gestionNominas("I", "null", "abril", nominados.Rows[i][0].ToString(), nominados.Rows[i][16].ToString(), nominados.Rows[i][17].ToString(), RFCEmpresa, fechaNomina, sueldoBruto.ToString(), sueldoNeto.ToString());
-
-                    /*          TRIGGER INSERT NOMINA                           
+                    
                     var nomina = db.gestionNominas("M", "null", "null", "null", "null", "null", "null", "null", "null", "null").Rows[0][0].ToString();
                              
                     for (int y = 0; y < deducciones.Rows.Count; y++)
@@ -144,7 +142,7 @@ namespace VENTANASMAD
                     {
                         db.gestionListaD("U", deducciones.Rows[y][0].ToString(), "null", "null", "null", "null", "null", nomina);
                     }
-                    */
+                    
                    
                 }
 

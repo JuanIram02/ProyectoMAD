@@ -36,6 +36,16 @@ namespace VENTANASMAD
 
             float sueldoDiario = float.Parse(departamento.Rows[0][2].ToString()) * float.Parse(puesto.Rows[0][2].ToString()) / 100;
 
+            string sD = String.Format("{0:C}", sueldoDiario);
+
+            float sueldoNeto = float.Parse(nomina.Rows[0][8].ToString());
+
+            string sN = String.Format("{0:C}", sueldoNeto);
+
+            float sueldoBruto = float.Parse(nomina.Rows[0][7].ToString());
+
+            string sB = String.Format("{0:C}", sueldoBruto);
+
             var conv = new Convertidor();
 
             var letras = conv.enletras(nomina.Rows[0][8].ToString());
@@ -117,7 +127,7 @@ namespace VENTANASMAD
                     txtThree.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
 
                     //Sueldo Diario
-                    TextFragment txtFour = new TextFragment(sueldoDiario.ToString());
+                    TextFragment txtFour = new TextFragment(sD);
                     txtFour.Position = new Position(250, 460);
                     txtFour.TextState.FontSize = 12;
                     txtFour.TextState.Font = FontRepository.FindFont("Arial");
@@ -250,7 +260,7 @@ namespace VENTANASMAD
                     //txtFour.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
 
                     //Sueldo Neto
-                    TextFragment txtFive = new TextFragment(nomina.Rows[0][8].ToString());
+                    TextFragment txtFive = new TextFragment(sN);
                     txtFive.Position = new Position(75, 110);
                     txtFive.TextState.FontSize = 12;
                     txtFive.TextState.Font = FontRepository.FindFont("Arial");
@@ -268,7 +278,7 @@ namespace VENTANASMAD
                 if (i == 5)
                 {
                     //Sueldo Bruto
-                    TextFragment txtOne = new TextFragment(nomina.Rows[0][7].ToString());
+                    TextFragment txtOne = new TextFragment(sB);
                     txtOne.Position = new Position(170, 110);
                     txtOne.TextState.FontSize = 12;
                     txtOne.TextState.Font = FontRepository.FindFont("Arial");
