@@ -87,9 +87,11 @@ namespace VENTANASMAD
                     var deducciones = db.gestionListaD("F", "null", nominados.Rows[i][0].ToString(), "null", fecha, fechaAux, "null", "null");
                     var percepciones = db.gestionListaP("F", "null", nominados.Rows[i][0].ToString(), "null", fecha, fechaAux, "null", "null");
 
-                    float sumatoria = 0;
+                    float sumatoriaP = 0;
 
-                    for(int y = 0; y < deducciones.Rows.Count; y++)
+                    float sumatoriaD = 0;
+
+                    for (int y = 0; y < deducciones.Rows.Count; y++)
                     {
                         string p = deducciones.Rows[y][4].ToString();
 
@@ -98,14 +100,14 @@ namespace VENTANASMAD
                             
                             float porcentaje = float.Parse(p);
 
-                            sumatoria = sumatoria - (sueldoBruto * porcentaje);
+                            sumatoriaD = sumatoriaD + (sueldoBruto * porcentaje);
 
                         }
                         else
                         {
                             float cantidad = float.Parse(p);
 
-                            sumatoria = sumatoria - cantidad;
+                            sumatoriaD = sumatoriaD + cantidad;
                         }                     
                     }
 
@@ -113,24 +115,25 @@ namespace VENTANASMAD
                     {
                         string p = percepciones.Rows[y][4].ToString();
 
-                        if (p.StartsWith("."))
+                        if (p.StartsWith("0."))
                         {
                             float porcentaje = float.Parse(p);
 
-                            sumatoria = sumatoria + (sueldoBruto * porcentaje);
+                            sumatoriaP = sumatoriaP + (sueldoBruto * porcentaje);
                         }
                         else
                         {
                             float cantidad = float.Parse(p);
 
-                            sumatoria = sumatoria + cantidad;
+                            sumatoriaP = sumatoriaP + cantidad;
                         }
                     }
 
-                    float sueldoNeto = sueldoBruto + sumatoria - ISR - IMSS;
+                    float sueldoNeto = sueldoBruto + sumatoriaP - sumatoriaD - ISR - IMSS;
 
                     db.gestionNominas("I", "null", "abril", nominados.Rows[i][0].ToString(), nominados.Rows[i][16].ToString(), nominados.Rows[i][17].ToString(), RFCEmpresa, fechaNomina, sueldoBruto.ToString(), sueldoNeto.ToString());
                     
+                    /*
                     var nomina = db.gestionNominas("M", "null", "null", "null", "null", "null", "null", "null", "null", "null").Rows[0][0].ToString();
                              
                     for (int y = 0; y < deducciones.Rows.Count; y++)
@@ -142,7 +145,7 @@ namespace VENTANASMAD
                     {
                         db.gestionListaD("U", deducciones.Rows[y][0].ToString(), "null", "null", "null", "null", "null", nomina);
                     }
-                    
+                    */
                    
                 }
 

@@ -53,7 +53,7 @@ namespace VENTANASMAD
             Document pdfDocument = new Document();
             Page page1 = pdfDocument.Pages.Add();
             BackgroundArtifact bg = new BackgroundArtifact();
-            bg.BackgroundImage = File.OpenRead(".../.../Resources/RECIBO.jpg");
+            bg.BackgroundImage = File.OpenRead(".../.../Resources/ORECIBONOMI.jpg");
 
             page1.Artifacts.Add(bg);
             for (int i = 0; i < 6; i++)
@@ -61,8 +61,8 @@ namespace VENTANASMAD
                 if (i == 0)
                 {
                     //Nombre
-                    TextFragment txtOne = new TextFragment(empleado.Rows[0][13].ToString() + empleado.Rows[0][14].ToString() + empleado.Rows[0][15].ToString());
-                    txtOne.Position = new Position(70, 580);
+                    TextFragment txtOne = new TextFragment(empleado.Rows[0][13].ToString() + " " + empleado.Rows[0][14].ToString() + " " + empleado.Rows[0][15].ToString());
+                    txtOne.Position = new Position(50, 580);
                     txtOne.TextState.FontSize = 12;
                     txtOne.TextState.Font = FontRepository.FindFont("Arial");
                     txtOne.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
@@ -76,8 +76,8 @@ namespace VENTANASMAD
 
                     //CURP
                     TextFragment txtThree = new TextFragment(empleado.Rows[0][1].ToString());
-                    txtThree.Position = new Position(310, 580);
-                    txtThree.TextState.FontSize = 12;
+                    txtThree.Position = new Position(275, 580);
+                    txtThree.TextState.FontSize = 10;
                     txtThree.TextState.Font = FontRepository.FindFont("Arial");
                     txtThree.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
 
@@ -133,14 +133,12 @@ namespace VENTANASMAD
                     txtFour.TextState.Font = FontRepository.FindFont("Arial");
                     txtFour.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
 
-                    //Fecha Alta
+                    //Periodo de Pago
                     TextFragment txtFive = new TextFragment(empleado.Rows[0][11].ToString());
-                    txtFive.Position = new Position(375, 460);
+                    txtFive.Position = new Position(390, 475);
                     txtFive.TextState.FontSize = 12;
                     txtFive.TextState.Font = FontRepository.FindFont("Arial");
                     txtFive.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
-
-
 
 
                     TextBuilder txtBuild = new TextBuilder(page1);
@@ -152,133 +150,174 @@ namespace VENTANASMAD
 
        
                 }
-                //if (i == 2)
-                //{
-                //    TextFragment txtOne = new TextFragment("texto13");
-                //    txtOne.Position = new Position(90, 365);
-                //    txtOne.TextState.FontSize = 12;
-                //    txtOne.TextState.Font = FontRepository.FindFont("Arial");
-                //    txtOne.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
+                if (i == 2)
+                {
 
-                //    TextFragment txtTwo = new TextFragment("texto14");
-                //    txtTwo.Position = new Position(165, 365);
-                //    txtTwo.TextState.FontSize = 12;
-                //    txtTwo.TextState.Font = FontRepository.FindFont("Arial");
-                //    txtTwo.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
+                    float sumatoria = 0;
 
-                //    TextFragment txtThree = new TextFragment("texto15");
-                //    txtThree.Position = new Position(90, 325);
-                //    txtThree.TextState.FontSize = 12;
-                //    txtThree.TextState.Font = FontRepository.FindFont("Arial");
-                //    txtThree.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
+                    for (int y = 0; y < percepciones.Rows.Count; y++)
+                    {
+                        TextFragment txtOne = new TextFragment(percepciones.Rows[y][0].ToString());
+                        txtOne.Position = new Position(50, 365 - (y * 40));
+                        txtOne.TextState.FontSize = 12;
+                        txtOne.TextState.Font = FontRepository.FindFont("Arial");
+                        txtOne.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
 
-                //    TextFragment txtFour = new TextFragment("texto16");
-                //    txtFour.Position = new Position(165, 325);
-                //    txtFour.TextState.FontSize = 12;
-                //    txtFour.TextState.Font = FontRepository.FindFont("Arial");
-                //    txtFour.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
+                        TextFragment txtTwo = new TextFragment(percepciones.Rows[y][1].ToString());
+                        txtTwo.Position = new Position(105, 365 - (y * 40));
+                        txtTwo.TextState.FontSize = 12;
+                        txtTwo.TextState.Font = FontRepository.FindFont("Arial");
+                        txtTwo.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
 
-                //    TextFragment txtFive = new TextFragment("texto17");
-                //    txtFive.Position = new Position(90, 270);
-                //    txtFive.TextState.FontSize = 12;
-                //    txtFive.TextState.Font = FontRepository.FindFont("Arial");
-                //    txtFive.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
+                        string p = percepciones.Rows[y][2].ToString();
+                        string importe;                       
 
+                        if (p.StartsWith("0."))
+                        {
+                            float porcentaje = float.Parse(p);
 
-                //    TextBuilder txtBuild = new TextBuilder(page1);
-                //    txtBuild.AppendText(txtOne);
-                //    txtBuild.AppendText(txtTwo);
-                //    txtBuild.AppendText(txtThree);
-                //    txtBuild.AppendText(txtFour);
-                //    txtBuild.AppendText(txtFive);
-                //}
-                //if (i == 3)
-                //{
-                //    TextFragment txtOne = new TextFragment("texto19");
-                //    txtOne.Position = new Position(165, 270);
-                //    txtOne.TextState.FontSize = 12;
-                //    txtOne.TextState.Font = FontRepository.FindFont("Arial");
-                //    txtOne.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
+                            sumatoria = sumatoria + (sueldoBruto * porcentaje);
 
-                //    TextFragment txtTwo = new TextFragment("texto20");
-                //    txtTwo.Position = new Position(90, 225);
-                //    txtTwo.TextState.FontSize = 12;
-                //    txtTwo.TextState.Font = FontRepository.FindFont("Arial");
-                //    txtTwo.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
+                            p = p.Remove(0, 2);
+                            if (p.Length == 1)
+                            {
+                                importe = "%" + p + "0";
+                            }
+                            else
+                            {
+                                importe = "%" + p;
+                            }
+                        }
+                        else
+                        {
+                            float cantidad = float.Parse(p);
 
-                //    TextFragment txtThree = new TextFragment("texto21");
-                //    txtThree.Position = new Position(165, 225);
-                //    txtThree.TextState.FontSize = 12;
-                //    txtThree.TextState.Font = FontRepository.FindFont("Arial");
-                //    txtThree.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
+                            sumatoria = sumatoria + cantidad;
 
-                //    TextFragment txtFour = new TextFragment("texto22");
-                //    txtFour.Position = new Position(300, 355);
-                //    txtFour.TextState.FontSize = 12;
-                //    txtFour.TextState.Font = FontRepository.FindFont("Arial");
-                //    txtFour.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
+                            importe = "$" + p + ".00";
+                        }
 
-                //    TextFragment txtFive = new TextFragment("texto23");
-                //    txtFive.Position = new Position(385, 355);
-                //    txtFive.TextState.FontSize = 12;
-                //    txtFive.TextState.Font = FontRepository.FindFont("Arial");
-                //    txtFive.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
+                        TextFragment txtThree = new TextFragment(importe);
+                        txtThree.Position = new Position(185, 365 - (y * 40));
+                        txtThree.TextState.FontSize = 12;
+                        txtThree.TextState.Font = FontRepository.FindFont("Arial");
+                        txtThree.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
 
+                        
 
-                //    TextBuilder txtBuild = new TextBuilder(page1);
-                //    txtBuild.AppendText(txtOne);
-                //    txtBuild.AppendText(txtTwo);
-                //    txtBuild.AppendText(txtThree);
-                //    txtBuild.AppendText(txtFour);
-                //    txtBuild.AppendText(txtFive);
+                        TextBuilder txtBuilds = new TextBuilder(page1);
+                        txtBuilds.AppendText(txtOne);
+                        txtBuilds.AppendText(txtTwo);
+                        txtBuilds.AppendText(txtThree);
+                       
+                    }
 
-                //}
+                    TextFragment txtFour = new TextFragment(String.Format("{0:C}", sumatoria));
+                    txtFour.Position = new Position(185, 195);
+                    txtFour.TextState.FontSize = 12;
+                    txtFour.TextState.Font = FontRepository.FindFont("Arial");
+                    txtFour.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
+
+                    TextBuilder txtBuild = new TextBuilder(page1);
+                    txtBuild.AppendText(txtFour);
+
+                }
+                if (i == 3)
+                {
+
+                    float sumatoria = 0;
+
+                    for (int y = 0; y < deducciones.Rows.Count; y++)
+                    {
+                        TextFragment txtOne = new TextFragment(deducciones.Rows[y][0].ToString());
+                        txtOne.Position = new Position(300, 355 - (y * 40));
+                        txtOne.TextState.FontSize = 12;
+                        txtOne.TextState.Font = FontRepository.FindFont("Arial");
+                        txtOne.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
+
+                        TextFragment txtTwo = new TextFragment(deducciones.Rows[y][1].ToString());
+                        txtTwo.Position = new Position(385, 355 - (y * 40));
+                        txtTwo.TextState.FontSize = 12;
+                        txtTwo.TextState.Font = FontRepository.FindFont("Arial");
+                        txtTwo.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
+
+                        string p = deducciones.Rows[y][2].ToString();
+                        string importe;
+
+                        if (p.StartsWith("0."))
+                        {
+                            float porcentaje = float.Parse(p);
+
+                            sumatoria = sumatoria + (sueldoBruto * porcentaje);
+
+                            p = p.Remove(0, 2);
+                            if(p.Length == 1)
+                            {
+                                importe = "%" + p + "0";
+                            }
+                            else
+                            {
+                                importe = "%" + p;
+                            }                           
+                          
+                        }
+                        else
+                        {
+                            float cantidad = float.Parse(p);
+
+                            sumatoria = sumatoria + cantidad;
+
+                            importe = "$" + p + ".00";
+                        }
+
+                        TextFragment txtThree = new TextFragment(importe);
+                        txtThree.Position = new Position(490, 355 - (y * 40));
+                        txtThree.TextState.FontSize = 12;
+                        txtThree.TextState.Font = FontRepository.FindFont("Arial");
+                        txtThree.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);                      
+
+                        TextBuilder txtBuilds = new TextBuilder(page1);
+                        txtBuilds.AppendText(txtOne);
+                        txtBuilds.AppendText(txtTwo);
+                        txtBuilds.AppendText(txtThree);
+                        
+                    }
+
+                    TextFragment txtFour = new TextFragment(String.Format("{0:C}", sumatoria));
+                    txtFour.Position = new Position(490, 195);
+                    txtFour.TextState.FontSize = 12;
+                    txtFour.TextState.Font = FontRepository.FindFont("Arial");
+                    txtFour.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
+
+                    TextBuilder txtBuild = new TextBuilder(page1);
+                    txtBuild.AppendText(txtFour);
+
+                }
                 if (i == 4)
                 {
-                    //TextFragment txtOne = new TextFragment("texto24");
-                    //txtOne.Position = new Position(490, 355);
-                    //txtOne.TextState.FontSize = 12;
-                    //txtOne.TextState.Font = FontRepository.FindFont("Arial");
-                    //txtOne.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
-
-                    //TextFragment txtTwo = new TextFragment("texto25");
-                    //txtTwo.Position = new Position(300, 315);
-                    //txtTwo.TextState.FontSize = 12;
-                    //txtTwo.TextState.Font = FontRepository.FindFont("Arial");
-                    //txtTwo.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
-
-                    //TextFragment txtThree = new TextFragment("texto26");
-                    //txtThree.Position = new Position(385, 315);
-                    //txtThree.TextState.FontSize = 12;
-                    //txtThree.TextState.Font = FontRepository.FindFont("Arial");
-                    //txtThree.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
-
-                    //TextFragment txtFour = new TextFragment("texto27");
-                    //txtFour.Position = new Position(490, 315);
-                    //txtFour.TextState.FontSize = 12;
-                    //txtFour.TextState.Font = FontRepository.FindFont("Arial");
-                    //txtFour.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
-
                     //Sueldo Neto
-                    TextFragment txtFive = new TextFragment(sN);
+                    TextFragment txtOne = new TextFragment(sN);
+                    txtOne.Position = new Position(170, 110);
+                    txtOne.TextState.FontSize = 12;
+                    txtOne.TextState.Font = FontRepository.FindFont("Arial");
+                    txtOne.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
+
+                    //Sueldo Bruto
+                    TextFragment txtFive = new TextFragment(sB);
                     txtFive.Position = new Position(75, 110);
                     txtFive.TextState.FontSize = 12;
                     txtFive.TextState.Font = FontRepository.FindFont("Arial");
                     txtFive.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Black);
 
 
-                    TextBuilder txtBuild = new TextBuilder(page1);
-                    //txtBuild.AppendText(txtOne);
-                    //txtBuild.AppendText(txtTwo);
-                    //txtBuild.AppendText(txtThree);
-                    //txtBuild.AppendText(txtFour);
+                    TextBuilder txtBuild = new TextBuilder(page1);    
                     txtBuild.AppendText(txtFive);
 
                 }
                 if (i == 5)
                 {
-                    //Sueldo Bruto
-                    TextFragment txtOne = new TextFragment(sB);
+                    //Sueldo Neto
+                    TextFragment txtOne = new TextFragment(sN);
                     txtOne.Position = new Position(170, 110);
                     txtOne.TextState.FontSize = 12;
                     txtOne.TextState.Font = FontRepository.FindFont("Arial");

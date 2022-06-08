@@ -62,7 +62,14 @@ namespace VENTANASMAD
                 }
                 if (d.Rows[0][2].ToString() == "")
                 {
-                    cantidad = "." + d.Rows[0][1].ToString();
+                    if (d.Rows[0][1].ToString().Length == 1)
+                    {
+                        cantidad = ".0" + d.Rows[0][1].ToString();
+                    }
+                    else
+                    {
+                        cantidad = "." + d.Rows[0][1].ToString();
+                    }
                 }
 
                 db.gestionListaD("I", "null", db.getEmpleado(), deduccion, fecha, "null", cantidad, "null");

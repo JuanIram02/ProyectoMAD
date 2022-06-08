@@ -64,7 +64,15 @@ namespace VENTANASMAD
                     }
                     if (p.Rows[0][2].ToString() == "")
                     {
-                        cantidad = "." + p.Rows[0][1].ToString();
+                        if (p.Rows[0][1].ToString().Length == 1)
+                        {
+                            cantidad = ".0" + p.Rows[0][1].ToString();
+                        }
+                        else
+                        {
+                            cantidad = "." + p.Rows[0][1].ToString();
+                        }
+                        
                     }
 
                     db.gestionListaP("I", "null", db.getEmpleado(), percepcion, fecha, "null", cantidad, "null");
